@@ -13,8 +13,8 @@ public class ProductAggregate {
   private final List<ReviewSummary> reviews;
   private final ServiceAddresses serviceAddresses;
 
-  public ProductAggregate(ServiceAddresses serviceAddresses, List<ReviewSummary> reviews,
-      List<RecommendationSummary> recommendations, int weight, String name, int productId) {
+  public ProductAggregate( int productId, String name, int weight,
+      List<RecommendationSummary> recommendations, List<ReviewSummary> reviews,ServiceAddresses serviceAddresses) {
     this.serviceAddresses = serviceAddresses;
     this.reviews = reviews;
     this.recommendations = recommendations;
