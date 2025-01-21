@@ -34,8 +34,8 @@ public class ProductCompositeServiceImpl implements ProductCompositeService {
   public ProductAggregate getProduct(int productId) {
 
     Product product = integration.getProduct(productId);
-    if(product == null) {
-      throw new NotFoundException("Product with id " + productId + " not found");
+    if (product == null) {
+      throw new NotFoundException("No product found for productId: " + productId);
     }
 
     List<Recommendation> recommendations = integration.getRecommendations(productId);
