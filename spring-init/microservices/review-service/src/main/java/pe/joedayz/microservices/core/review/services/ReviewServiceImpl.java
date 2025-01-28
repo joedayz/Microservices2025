@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import pe.joedayz.microservices.api.core.review.Review;
 import pe.joedayz.microservices.api.core.review.ReviewService;
 import pe.joedayz.microservices.api.exceptions.InvalidInputException;
+import pe.joedayz.microservices.core.review.persistence.ReviewEntity;
+import pe.joedayz.microservices.core.review.persistence.ReviewRepository;
 import pe.joedayz.microservices.util.http.ServiceUtil;
 
 /**
@@ -17,11 +20,14 @@ import pe.joedayz.microservices.util.http.ServiceUtil;
 public class ReviewServiceImpl implements ReviewService {
 
   private static final Logger LOG = LoggerFactory.getLogger(ReviewServiceImpl.class);
-
+  private final ReviewMapper mapper;
+  private final ReviewRepository reviewRepository;
   private final ServiceUtil serviceUtil;
 
-  public ReviewServiceImpl(ServiceUtil serviceUtil) {
+  public ReviewServiceImpl(ReviewMapper mapper, ReviewRepository reviewRepository, ServiceUtil serviceUtil) {
     this.serviceUtil = serviceUtil;
+    this.reviewRepository = reviewRepository;
+    this.mapper = mapper;
   }
 
   @Override
@@ -30,21 +36,12 @@ public class ReviewServiceImpl implements ReviewService {
       throw new InvalidInputException("Invalid productId: " + productId);
     }
 
-    if (productId == 213) {
-      LOG.debug("No reviews found for productId: {}", productId);
-      return new ArrayList<>();
-    }
+    List<ReviewEntity> entityList = reviewRepository.findByProductId(productId);
+    List<Review> apiList = mapper.entityListToApiList(entityList);
+    apiList.forEach(r -> r.setServiceAddress(serviceUtil.getServiceAddress()));
 
-    List<Review> list = new ArrayList<>();
-    list.add(new Review(productId, 1, "Author 1", "Subject 1", "Content 1",
-        serviceUtil.getServiceAddress()));
-    list.add(new Review(productId, 2, "Author 2", "Subject 2", "Content 2",
-        serviceUtil.getServiceAddress()));
-    list.add(new Review(productId, 3, "Author 3", "Subject 3", "Content 3",
-        serviceUtil.getServiceAddress()));
+    LOG.debug("getReviews: response size: {}", apiList.size());
 
-    LOG.debug("review response size: {}", list.size());
-
-    return list;
+    return apiList;
   }
 }
