@@ -3,6 +3,7 @@ package pe.joedayz.microservices.composite.product.services;
 import static org.springframework.http.HttpMethod.GET;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.slf4j.Logger;
@@ -21,6 +22,7 @@ import pe.joedayz.microservices.api.core.review.Review;
 import pe.joedayz.microservices.api.core.review.ReviewService;
 import pe.joedayz.microservices.api.exceptions.InvalidInputException;
 import pe.joedayz.microservices.api.exceptions.NotFoundException;
+import pe.joedayz.microservices.util.http.HttpErrorInfo;
 
 /**
  * @author josediaz
@@ -66,10 +68,18 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
       return product;
     }catch (HttpClientErrorException ex){
       switch (HttpStatus.resolve(ex.getStatusCode().value())){
-        case NOT_FOUND -> throw new NotFoundException(ex.getMessage());
-        case UNPROCESSABLE_ENTITY -> throw new InvalidInputException(ex.getMessage());
+        case NOT_FOUND -> throw new NotFoundException(getErrorMessage(ex));
+        case UNPROCESSABLE_ENTITY -> throw new InvalidInputException(getErrorMessage(ex));
         default -> throw  ex;
       }
+    }
+  }
+
+  private String getErrorMessage(HttpClientErrorException ex) {
+    try{
+      return objectMapper.readValue(ex.getResponseBodyAsString(), HttpErrorInfo.class).getMessage();
+    }catch (IOException ioex){
+      return ex.getMessage();
     }
   }
 
