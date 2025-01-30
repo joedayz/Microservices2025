@@ -8,6 +8,8 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct-processor/1.6.3/52e345c907fbf173b376586c7f8b131d53fa5867/mapstruct-processor-1.6.3.jar" />
         </processorPath>
         <module name="spring-init.microservices.review-service.main" />
+        <module name="spring-init.microservices.recommendation-service.test" />
+        <module name="spring-init.microservices.recommendation-service.main" />
         <module name="spring-init.microservices.review-service.test" />
       </profile>
     </annotationProcessing>
