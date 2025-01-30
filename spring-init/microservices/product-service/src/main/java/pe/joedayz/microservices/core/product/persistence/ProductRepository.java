@@ -1,0 +1,12 @@
+package pe.joedayz.microservices.core.product.persistence;
+
+import java.util.Optional;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+/**
+ * @author josediaz
+ **/
+public interface ProductRepository extends PagingAndSortingRepository<ProductEntity, String>, CrudRepository<ProductEntity, String> {
+  Optional<ProductEntity> findByProductId(int productId);
+}
