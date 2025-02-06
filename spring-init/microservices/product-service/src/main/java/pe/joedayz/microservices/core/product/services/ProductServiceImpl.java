@@ -28,11 +28,13 @@ public class ProductServiceImpl implements ProductService {
   private final ProductMapper mapper;
 
   @Autowired
-  public ProductServiceImpl(ProductRepository repository, ProductMapper mapper, ServiceUtil serviceUtil) {
+  public ProductServiceImpl(ProductRepository repository, ProductMapper mapper,
+      ServiceUtil serviceUtil) {
     this.repository = repository;
     this.mapper = mapper;
     this.serviceUtil = serviceUtil;
   }
+
   @Override
   public Product createProduct(Product body) {
     try {
@@ -50,6 +52,10 @@ public class ProductServiceImpl implements ProductService {
   @Override
   public Product getProduct(int productId) {
     LOG.debug("Return the found product with id {}", productId);
+
+    if (productId < 1) {
+      throw new InvalidInputException("Invalid productId: " + productId);
+    }
 
     ProductEntity entity = repository.findByProductId(productId)
         .orElseThrow(() -> new NotFoundException("No product found for productId: " + productId));
