@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ac42f98c-20f4-47dd-bcf5-9a1fffa2e868" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules/microservices/review-service/spring-init.microservices.review-service.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/microservices/review-service/spring-init.microservices.review-service.test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/composite/ProductCompositeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/composite/ProductCompositeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/core/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/core/product/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/core/recommendation/RecommendationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/core/recommendation/RecommendationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/core/review/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/core/review/ReviewService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="spring-init" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dockerfile" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;joedayz&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/joedayz/Microservices2025.git&quot;,
+    &quot;accountId&quot;: &quot;d5516b54-db08-4c32-abd1-761d05e7818d&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2rb7FdlIG3WRVMiJbJBpO0mQh8B" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.MapperTests.executor": "Run",
+    "Gradle.MapperTests.mapperListTests (1).executor": "Run",
+    "Gradle.MapperTests.mapperListTests.executor": "Run",
+    "Gradle.MapperTests.mapperTest.executor": "Run",
+    "Gradle.MapperTests.mapperTests.executor": "Run",
+    "Gradle.PersistenceTests (1).executor": "Run",
+    "Gradle.PersistenceTests.create (1).executor": "Run",
+    "Gradle.PersistenceTests.create.executor": "Run",
+    "Gradle.PersistenceTests.executor": "Run",
+    "Gradle.PersistenceTests.paging.executor": "Run",
+    "Gradle.ProductCompositeServiceApplicationTests.createCompositeProduct1.executor": "Run",
+    "Gradle.ProductCompositeServiceApplicationTests.createCompositeProduct2.executor": "Run",
+    "Gradle.ProductCompositeServiceApplicationTests.deleteCompositeProduct.executor": "Run",
+    "Gradle.ProductCompositeServiceApplicationTests.executor": "Run",
+    "Gradle.ProductCompositeServiceApplicationTests.getProductById.executor": "Run",
+    "Gradle.ProductCompositeServiceApplicationTests.getProductInvalidInput.executor": "Run",
+    "Gradle.ProductCompositeServiceApplicationTests.getProductNotFound.executor": "Run",
+    "Gradle.ProductServiceApplicationTests.executor": "Run",
+    "Gradle.ProductServiceApplicationTests.getProductById.executor": "Run",
+    "Gradle.ReactiveTests.testFlux.executor": "Run",
+    "Gradle.RecommendationServiceApplicationTests.executor": "Run",
+    "Gradle.RecommendationServiceApplicationTests.getRecommendationsByProductId.executor": "Run",
+    "Gradle.RecommendationServiceApplicationTests.getRecommendationsInvalidParameter.executor": "Run",
+    "Gradle.RecommendationServiceApplicationTests.getRecommendationsInvalidParameterNegativeValue.executor": "Run",
+    "Gradle.RecommendationServiceApplicationTests.getRecommendationsMissingParameter.executor": "Run",
+    "Gradle.RecommendationServiceApplicationTests.getRecommendationsNotFound.executor": "Run",
+    "Gradle.ReviewServiceApplicationTests.deleteReviews.executor": "Run",
+    "Gradle.ReviewServiceApplicationTests.duplicateError.executor": "Run",
+    "Gradle.ReviewServiceApplicationTests.executor": "Run",
+    "Gradle.ReviewServiceApplicationTests.getReviewsByProductId.executor": "Run",
+    "Gradle.ReviewServiceApplicationTests.getReviewsInvalidParameter.executor": "Run",
+    "Gradle.ReviewServiceApplicationTests.getReviewsInvalidParameterNegativeValue.executor": "Run",
+    "Gradle.ReviewServiceApplicationTests.getReviewsMissingParameter.executor": "Run",
+    "Gradle.ReviewServiceApplicationTests.getReviewsNotFound.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "/Users/josediaz/Projects/joedayz/microservicios2025/Microservices2025/spring-init/util/src/test/java",
+    "last_opened_file_path": "/Users/josediaz/Projects/joedayz/microservicios2025/Microservices2025/spring-init/microservices/product-composite-service",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/microservices/product-composite-service" />
+      <recent name="$PROJECT_DIR$/microservices/product-service" />
+      <recent name="$PROJECT_DIR$/microservices/recommendation-service" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Gradle.ReactiveTests.testFlux">
+    <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
+      <option name="appName" />
+      <option name="appServicePlanName" />
+      <option name="appServicePlanResourceGroup" />
+      <option name="appSettingsKey" value="6ab37308-2a56-49e2-9d6a-3a67a98527a3" />
+      <option name="artifact" />
+      <option name="debugOptions" />
+      <option name="deployment" />
+      <option name="deploymentStagingDirectoryPath" />
+      <option name="funcPath" />
+      <option name="functionHostArguments" />
+      <option name="hostJsonPath" />
+      <option name="insightsName" />
+      <option name="instrumentationKey" />
+      <option name="javaVersion" />
+      <option name="localSettingsJsonPath" />
+      <option name="moduleName" />
+      <option name="os" />
+      <option name="pricingTier" />
+      <option name="providerMap">
+        <map />
+      </option>
+      <option name="region" />
+      <option name="resourceGroup" />
+      <option name="stagingFolder" />
+      <option name="subscription" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersistenceTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":microservices:product-service:test" />
+            <option value="--tests" />
+            <option value="&quot;pe.joedayz.microservices.core.product.PersistenceTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ProductCompositeServiceApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":microservices:product-composite-service:test" />
+            <option value="--tests" />
+            <option value="&quot;pe.joedayz.microservices.composite.product.ProductCompositeServiceApplicationTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ProductServiceApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":microservices:product-service:test" />
+            <option value="--tests" />
+            <option value="&quot;pe.joedayz.microservices.core.product.ProductServiceApplicationTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ProductServiceApplicationTests.getProductById" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":microservices:product-service:test" />
+            <option value="--tests" />
+            <option value="&quot;pe.joedayz.microservices.core.product.ProductServiceApplicationTests.getProductById&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ReactiveTests.testFlux" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":util:test" />
+            <option value="--tests" />
+            <option value="&quot;pe.joedayz.microservices.util.ReactiveTests.testFlux&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="spring-init" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="spring-init" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="spring-init" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ProductCompositeServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="spring-init.microservices.product-composite-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pe.joedayz.microservices.composite.product.ProductCompositeServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="spring-init.microservices.product-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pe.joedayz.microservices.core.product.ProductServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RecommendationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="spring-init.microservices.recommendation-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pe.joedayz.microservices.core.recommendation.RecommendationServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReviewServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="spring-init.microservices.review-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pe.joedayz.microservices.core.review.ReviewServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UtilApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="spring-init.util.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pe.joedayz.microservices.util.UtilApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="spring-init" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ccruntests" factoryName="Run Study Tests">
+      <module name="spring-init" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <option name="studyTest" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.ReactiveTests.testFlux" />
+        <item itemvalue="Gradle.ProductCompositeServiceApplicationTests" />
+        <item itemvalue="Gradle.ProductServiceApplicationTests" />
+        <item itemvalue="Gradle.ProductServiceApplicationTests.getProductById" />
+        <item itemvalue="Gradle.PersistenceTests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.189" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.189" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac42f98c-20f4-47dd-bcf5-9a1fffa2e868" name="Changes" comment="" />
+      <created>1736815818501</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736815818501</updated>
+      <workItem from="1736815820754" duration="1347000" />
+      <workItem from="1736817328107" duration="4069000" />
+      <workItem from="1736988021448" duration="5665000" />
+      <workItem from="1737419644786" duration="4996000" />
+      <workItem from="1737593120357" duration="4103000" />
+      <workItem from="1738024420390" duration="6417000" />
+      <workItem from="1738030941410" duration="21000" />
+      <workItem from="1738197261741" duration="5643000" />
+      <workItem from="1738802011186" duration="5156000" />
+      <workItem from="1738808372415" duration="97000" />
+      <workItem from="1740443750052" duration="100000" />
+      <workItem from="1740443853832" duration="456000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/microservices/review-service/build.gradle</url>
+          <line>23</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
