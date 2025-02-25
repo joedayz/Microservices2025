@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac42f98c-20f4-47dd-bcf5-9a1fffa2e868" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/main/java/pe/joedayz/microservices/core/recommendation/RecommendationServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/main/java/pe/joedayz/microservices/core/recommendation/RecommendationServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/main/java/pe/joedayz/microservices/core/recommendation/persistence/RecommendationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/main/java/pe/joedayz/microservices/core/recommendation/persistence/RecommendationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/main/java/pe/joedayz/microservices/core/recommendation/services/RecommendationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/main/java/pe/joedayz/microservices/core/recommendation/services/RecommendationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/main/java/pe/joedayz/microservices/core/review/ReviewServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/main/java/pe/joedayz/microservices/core/review/ReviewServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/main/java/pe/joedayz/microservices/core/review/services/ReviewServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/main/java/pe/joedayz/microservices/core/review/services/ReviewServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +150,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ReactiveTests.testFlux">
+  <component name="RunManager" selected="Gradle.MapperTests">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -173,7 +181,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersistenceTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MapperTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -184,9 +192,9 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":microservices:product-service:test" />
+            <option value=":microservices:review-service:test" />
             <option value="--tests" />
-            <option value="&quot;pe.joedayz.microservices.core.product.PersistenceTests&quot;" />
+            <option value="&quot;pe.joedayz.microservices.core.review.MapperTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -398,11 +406,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.MapperTests" />
         <item itemvalue="Gradle.ReactiveTests.testFlux" />
         <item itemvalue="Gradle.ProductCompositeServiceApplicationTests" />
         <item itemvalue="Gradle.ProductServiceApplicationTests" />
         <item itemvalue="Gradle.ProductServiceApplicationTests.getProductById" />
-        <item itemvalue="Gradle.PersistenceTests" />
       </list>
     </recent_temporary>
   </component>
@@ -436,7 +444,7 @@
       <workItem from="1738802011186" duration="5156000" />
       <workItem from="1738808372415" duration="97000" />
       <workItem from="1740443750052" duration="100000" />
-      <workItem from="1740443853832" duration="538000" />
+      <workItem from="1740443853832" duration="3039000" />
     </task>
     <servers />
   </component>

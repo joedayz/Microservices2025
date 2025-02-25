@@ -17,7 +17,9 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 import pe.joedayz.microservices.api.core.review.Review;
 import pe.joedayz.microservices.core.review.persistence.ReviewRepository;
 
-@SpringBootTest(webEnvironment = RANDOM_PORT)
+@SpringBootTest(webEnvironment = RANDOM_PORT, properties = {
+    "logging.level.pe.joedayz=DEBUG"
+})
 class ReviewServiceApplicationTests extends MySqlTestBase {
 
   @Autowired
