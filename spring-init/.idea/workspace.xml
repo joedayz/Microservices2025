@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac42f98c-20f4-47dd-bcf5-9a1fffa2e868" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/event/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/exceptions/EventProcessingException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose-kafka.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/review-service/src/main/java/pe/joedayz/microservices/core/review/services/MessageProcessorConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/review-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/review-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -415,9 +406,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.ReviewServiceApplicationTests" />
+        <item itemvalue="Gradle.ReviewServiceApplicationTests.getReviewsByProductId" />
         <item itemvalue="Gradle.PersistenceTests" />
         <item itemvalue="Gradle.MapperTests" />
-        <item itemvalue="Gradle.ReviewServiceApplicationTests.getReviewsByProductId" />
         <item itemvalue="Gradle.ReactiveTests.testFlux" />
       </list>
     </recent_temporary>
@@ -453,7 +444,7 @@
       <workItem from="1738808372415" duration="97000" />
       <workItem from="1740443750052" duration="100000" />
       <workItem from="1740443853832" duration="5072000" />
-      <workItem from="1740616785319" duration="4748000" />
+      <workItem from="1740616785319" duration="5945000" />
     </task>
     <servers />
   </component>
@@ -473,17 +464,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/microservices/review-service/build.gradle</url>
-          <line>23</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
