@@ -15,5 +15,8 @@
         <module name="spring-init.microservices.review-service.test" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="21">
+      <module name="pe.joedayz.microservices.util.spring-init.util.test" target="21" />
+    </bytecodeTargetLevel>
   </component>
 </project>

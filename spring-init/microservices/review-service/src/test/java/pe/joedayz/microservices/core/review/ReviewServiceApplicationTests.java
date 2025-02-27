@@ -1,25 +1,30 @@
 package pe.joedayz.microservices.core.review;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
-import static org.springframework.http.HttpStatus.BAD_REQUEST;
-import static org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY;
-import static reactor.core.publisher.Mono.just;
-import static org.springframework.http.HttpStatus.OK;
+import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static pe.joedayz.microservices.api.event.Event.Type.CREATE;
+import static pe.joedayz.microservices.api.event.Event.Type.DELETE;
 
+
+import java.util.function.Consumer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import pe.joedayz.microservices.api.core.review.Review;
+import pe.joedayz.microservices.api.event.Event;
+import pe.joedayz.microservices.api.exceptions.InvalidInputException;
 import pe.joedayz.microservices.core.review.persistence.ReviewRepository;
 
+
 @SpringBootTest(webEnvironment = RANDOM_PORT, properties = {
-    "logging.level.pe.joedayz=DEBUG"
-})
+    "spring.cloud.stream.defaultBinder=rabbit",
+    "logging.level.pe.joedayz=DEBUG"})
 class ReviewServiceApplicationTests extends MySqlTestBase {
 
   @Autowired
@@ -28,6 +33,10 @@ class ReviewServiceApplicationTests extends MySqlTestBase {
   @Autowired
   private ReviewRepository repository;
 
+  @Autowired
+  @Qualifier("messageProcessor")
+  private Consumer<Event<Integer, Review>> messageProcessor;
+
   @BeforeEach
   void setupDb() {
     repository.deleteAll();
@@ -35,13 +44,14 @@ class ReviewServiceApplicationTests extends MySqlTestBase {
 
   @Test
   void getReviewsByProductId() {
+
     int productId = 1;
 
     assertEquals(0, repository.findByProductId(productId).size());
 
-    postAndVerifyReview(productId, 1, OK);
-    postAndVerifyReview(productId, 2, OK);
-    postAndVerifyReview(productId, 3, OK);
+    sendCreateReviewEvent(productId, 1);
+    sendCreateReviewEvent(productId, 2);
+    sendCreateReviewEvent(productId, 3);
 
     assertEquals(3, repository.findByProductId(productId).size());
 
@@ -59,15 +69,15 @@ class ReviewServiceApplicationTests extends MySqlTestBase {
 
     assertEquals(0, repository.count());
 
-    postAndVerifyReview(productId, 1, OK)
-        .jsonPath("$.productId").isEqualTo(productId)
-        .jsonPath("$.reviewId").isEqualTo(reviewId);
+    sendCreateReviewEvent(productId, reviewId);
 
     assertEquals(1, repository.count());
 
-    postAndVerifyReview(productId, reviewId, UNPROCESSABLE_ENTITY)
-        .jsonPath("$.path").isEqualTo("/review")
-        .jsonPath("$.message").isEqualTo("Duplicate key, Product Id: 1, Review Id:1");
+    InvalidInputException thrown = assertThrows(
+        InvalidInputException.class,
+        () -> sendCreateReviewEvent(productId, reviewId),
+        "Expected a InvalidInputException here!");
+    assertEquals("Duplicate key, Product Id: 1, Review Id:1", thrown.getMessage());
 
     assertEquals(1, repository.count());
   }
@@ -78,18 +88,18 @@ class ReviewServiceApplicationTests extends MySqlTestBase {
     int productId = 1;
     int reviewId = 1;
 
-    postAndVerifyReview(productId, reviewId, OK);
+    sendCreateReviewEvent(productId, reviewId);
     assertEquals(1, repository.findByProductId(productId).size());
 
-    deleteAndVerifyReviewsByProductId(productId, OK);
+    sendDeleteReviewEvent(productId);
     assertEquals(0, repository.findByProductId(productId).size());
 
-    deleteAndVerifyReviewsByProductId(productId, OK);
-
+    sendDeleteReviewEvent(productId);
   }
 
   @Test
   void getReviewsMissingParameter() {
+
     getAndVerifyReviewsByProductId("", BAD_REQUEST)
         .jsonPath("$.path").isEqualTo("/review")
         .jsonPath("$.message").isEqualTo("Required query parameter 'productId' is not present.");
@@ -120,18 +130,6 @@ class ReviewServiceApplicationTests extends MySqlTestBase {
         .jsonPath("$.message").isEqualTo("Invalid productId: " + productIdInvalid);
   }
 
-  private WebTestClient.BodyContentSpec postAndVerifyReview(int productId, int reviewId, HttpStatus expectedStatus) {
-    Review review = new Review(productId, reviewId, "Author " + reviewId, "Subject " + reviewId, "Content " + reviewId, "SA");
-    return client.post()
-        .uri("/review")
-        .body(just(review), Review.class)
-        .accept(APPLICATION_JSON)
-        .exchange()
-        .expectStatus().isEqualTo(expectedStatus)
-        .expectHeader().contentType(APPLICATION_JSON)
-        .expectBody();
-  }
-
   private WebTestClient.BodyContentSpec getAndVerifyReviewsByProductId(int productId, HttpStatus expectedStatus) {
     return getAndVerifyReviewsByProductId("?productId=" + productId, expectedStatus);
   }
@@ -146,12 +144,14 @@ class ReviewServiceApplicationTests extends MySqlTestBase {
         .expectBody();
   }
 
-  private WebTestClient.BodyContentSpec  deleteAndVerifyReviewsByProductId(int productId, HttpStatus expectedStatus) {
-    return client.delete()
-        .uri("/review?productId=" + productId)
-        .accept(APPLICATION_JSON)
-        .exchange()
-        .expectStatus().isEqualTo(expectedStatus)
-        .expectBody();
+  private void sendCreateReviewEvent(int productId, int reviewId) {
+    Review review = new Review(productId, reviewId, "Author " + reviewId, "Subject " + reviewId, "Content " + reviewId, "SA");
+    Event<Integer, Review> event = new Event(CREATE, productId, review);
+    messageProcessor.accept(event);
+  }
+
+  private void sendDeleteReviewEvent(int productId) {
+    Event<Integer, Review> event = new Event(DELETE, productId, null);
+    messageProcessor.accept(event);
   }
 }
