@@ -1,22 +1,23 @@
 package pe.joedayz.microservices.composite.product.services;
 
 import static java.util.logging.Level.FINE;
-import static org.springframework.http.HttpMethod.GET;
+import static pe.joedayz.microservices.api.event.Event.Type.CREATE;
+import static pe.joedayz.microservices.api.event.Event.Type.DELETE;
 import static reactor.core.publisher.Mono.empty;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.boot.actuate.health.Health;
+import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.http.HttpStatus;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 import pe.joedayz.microservices.api.core.product.Product;
@@ -25,6 +26,7 @@ import pe.joedayz.microservices.api.core.recommendation.Recommendation;
 import pe.joedayz.microservices.api.core.recommendation.RecommendationService;
 import pe.joedayz.microservices.api.core.review.Review;
 import pe.joedayz.microservices.api.core.review.ReviewService;
+import pe.joedayz.microservices.api.event.Event;
 import pe.joedayz.microservices.api.exceptions.InvalidInputException;
 import pe.joedayz.microservices.api.exceptions.NotFoundException;
 import pe.joedayz.microservices.util.http.HttpErrorInfo;
@@ -36,7 +38,8 @@ import reactor.core.scheduler.Scheduler;
  * @author josediaz
  **/
 @Component
-public class ProductCompositeIntegration implements ProductService, RecommendationService, ReviewService {
+public class ProductCompositeIntegration implements ProductService, RecommendationService,
+    ReviewService {
 
   private static final Logger LOG = LoggerFactory.getLogger(ProductCompositeIntegration.class);
 
@@ -47,6 +50,8 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
   private final String recommendationServiceUrl;
   private final String reviewServiceUrl;
 
+  private final StreamBridge streamBridge;
+
   private final Scheduler publishEventScheduler;
 
   @Autowired
@@ -54,6 +59,7 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
       @Qualifier("publishEventScheduler") Scheduler publishEventScheduler,
       WebClient.Builder webClient,
       ObjectMapper mapper,
+      StreamBridge streamBridge,
       @Value("${app.product-service.host}") String productServiceHost,
       @Value("${app.product-service.port}") int productServicePort,
       @Value("${app.recommendation-service.host}") String recommendationServiceHost,
@@ -64,18 +70,19 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
     this.publishEventScheduler = publishEventScheduler;
     this.webClient = webClient.build();
     this.mapper = mapper;
+    this.streamBridge = streamBridge;
 
-
-    productServiceUrl        = "http://" + productServiceHost + ":" + productServicePort;
-    recommendationServiceUrl = "http://" + recommendationServiceHost + ":" + recommendationServicePort;
-    reviewServiceUrl         = "http://" + reviewServiceHost + ":" + reviewServicePort;
+    productServiceUrl = "http://" + productServiceHost + ":" + productServicePort;
+    recommendationServiceUrl =
+        "http://" + recommendationServiceHost + ":" + recommendationServicePort;
+    reviewServiceUrl = "http://" + reviewServiceHost + ":" + reviewServicePort;
   }
 
   @Override
   public Mono<Product> createProduct(Product body) {
 
     return Mono.fromCallable(() -> {
-      //TODO sendMessage("products-out-0", new Event(CREATE, body.getProductId(), body));
+      sendMessage("products-out-0", new Event(CREATE, body.getProductId(), body));
       return body;
     }).subscribeOn(publishEventScheduler);
 
@@ -87,25 +94,24 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
     String url = productServiceUrl + "/product/" + productId;
     LOG.debug("Will call the getProduct API on URL: {}", url);
 
-    return webClient.get().uri(url).retrieve().bodyToMono(Product.class).log(LOG.getName(), FINE).onErrorMap(
-        WebClientResponseException.class, ex -> handleException(ex));
+    return webClient.get().uri(url).retrieve().bodyToMono(Product.class).log(LOG.getName(), FINE)
+        .onErrorMap(
+            WebClientResponseException.class, ex -> handleException(ex));
 
   }
 
   @Override
   public Mono<Void> deleteProduct(int productId) {
-    return Mono.fromRunnable(() -> {
-        //TODO sendMessage("recommendations-out-0", new Event(DELETE, productId, null))
-        })
+    return Mono.fromRunnable(() ->
+            sendMessage("products-out-0", new Event(DELETE, productId, null)))
         .subscribeOn(publishEventScheduler).then();
   }
 
   @Override
   public Mono<Recommendation> createRecommendation(Recommendation body) {
 
-
     return Mono.fromCallable(() -> {
-      //TODO sendMessage("reviews-out-0", new Event(CREATE, body.getProductId(), body));
+      sendMessage("recommendations-out-0", new Event(CREATE, body.getProductId(), body));
       return body;
     }).subscribeOn(publishEventScheduler);
   }
@@ -124,9 +130,8 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
 
   @Override
   public Mono<Void> deleteRecommendations(int productId) {
-    return Mono.fromRunnable(() -> {
-      //TODO sendMessage("recommendations-out-0", new Event(DELETE, productId, null))
-        })
+    return Mono.fromRunnable(() ->
+            sendMessage("recommendations-out-0", new Event(DELETE, productId, null)))
         .subscribeOn(publishEventScheduler).then();
   }
 
@@ -134,7 +139,7 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
   public Mono<Review> createReview(Review body) {
 
     return Mono.fromCallable(() -> {
-      //TODO sendMessage("reviews-out-0", new Event(CREATE, body.getProductId(), body));
+      sendMessage("reviews-out-0", new Event(CREATE, body.getProductId(), body));
       return body;
     }).subscribeOn(publishEventScheduler);
   }
@@ -154,10 +159,39 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
 
   @Override
   public Mono<Void> deleteReviews(int productId) {
-    return Mono.fromRunnable(() -> {
-      //TODO sendMessage("reviews-out-0", new Event(DELETE, productId, null))
-        })
+    return Mono.fromRunnable(() -> sendMessage("reviews-out-0", new Event(DELETE, productId, null)))
         .subscribeOn(publishEventScheduler).then();
+  }
+
+  public Mono<Health> getProductHealth() {
+    return getHealth(productServiceUrl);
+  }
+
+  public Mono<Health> getRecommendationHealth() {
+    return getHealth(recommendationServiceUrl);
+  }
+
+  public Mono<Health> getReviewHealth() {
+    return getHealth(reviewServiceUrl);
+  }
+
+  private Mono<Health> getHealth(String url) {
+    url += "/actuator/health";
+    LOG.debug("Will call the Health API on URL: {}", url);
+    return webClient.get().uri(url).retrieve().bodyToMono(String.class)
+        .map(s -> new Health.Builder().up().build())
+        .onErrorResume(ex -> Mono.just(new Health.Builder().down(ex).build()))
+        .log(LOG.getName(), FINE);
+  }
+
+
+
+  private void sendMessage(String bindingName, Event event) {
+    LOG.debug("Sending a {} message to {}", event.getEventType(), bindingName);
+    Message<Event> message = MessageBuilder.withPayload(event)
+        .setHeader("partitionKey", event.getKey())
+        .build();
+    streamBridge.send(bindingName, message);
   }
 
   private Throwable handleException(Throwable ex) {
@@ -166,7 +200,7 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
       return ex;
     }
 
-    WebClientResponseException wcre = (WebClientResponseException)ex;
+    WebClientResponseException wcre = (WebClientResponseException) ex;
 
     switch (HttpStatus.resolve(wcre.getStatusCode().value())) {
 

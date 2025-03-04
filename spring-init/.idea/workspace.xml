@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac42f98c-20f4-47dd-bcf5-9a1fffa2e868" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/microservices/product-service/src/main/java/pe/joedayz/microservices/core/product/services/MessageProcessorConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/product-service/src/test/resources/logback-test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/microservices/recommendation-service/spring-init.microservices.recommendation-service.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/microservices/recommendation-service/spring-init.microservices.recommendation-service.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/HealthCheckConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/microservices/product-service/spring-init.microservices.product-service.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/microservices/product-service/spring-init.microservices.product-service.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/PersistenceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/PersistenceTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/ProductServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/ProductServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/services/ProductCompositeIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/services/ProductCompositeIntegration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +156,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.PersistenceTests">
+  <component name="RunManager" selected="Gradle.ProductCompositeServiceApplicationTests">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -214,6 +211,54 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="ProductCompositeServiceApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":microservices:product-composite-service:test" />
+            <option value="--tests" />
+            <option value="&quot;pe.joedayz.microservices.composite.product.ProductCompositeServiceApplicationTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ProductServiceApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":microservices:product-service:test" />
+            <option value="--tests" />
+            <option value="&quot;pe.joedayz.microservices.core.product.ProductServiceApplicationTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="RecommendationServiceApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -252,54 +297,6 @@
             <option value=":microservices:recommendation-service:test" />
             <option value="--tests" />
             <option value="&quot;pe.joedayz.microservices.core.recommendation.RecommendationServiceApplicationTests.deleteRecommendations&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="RecommendationServiceApplicationTests.duplicateError" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":microservices:recommendation-service:test" />
-            <option value="--tests" />
-            <option value="&quot;pe.joedayz.microservices.core.recommendation.RecommendationServiceApplicationTests.duplicateError&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="RecommendationServiceApplicationTests.getRecommendationsByProductId" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":microservices:recommendation-service:test" />
-            <option value="--tests" />
-            <option value="&quot;pe.joedayz.microservices.core.recommendation.RecommendationServiceApplicationTests.getRecommendationsByProductId&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -415,11 +412,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ProductCompositeServiceApplicationTests" />
+        <item itemvalue="Gradle.ProductServiceApplicationTests" />
         <item itemvalue="Gradle.PersistenceTests" />
         <item itemvalue="Gradle.RecommendationServiceApplicationTests" />
         <item itemvalue="Gradle.RecommendationServiceApplicationTests.deleteRecommendations" />
-        <item itemvalue="Gradle.RecommendationServiceApplicationTests.duplicateError" />
-        <item itemvalue="Gradle.RecommendationServiceApplicationTests.getRecommendationsByProductId" />
       </list>
     </recent_temporary>
   </component>
@@ -455,7 +452,7 @@
       <workItem from="1740443750052" duration="100000" />
       <workItem from="1740443853832" duration="5072000" />
       <workItem from="1740616785319" duration="6573000" />
-      <workItem from="1741048386043" duration="3980000" />
+      <workItem from="1741048386043" duration="5157000" />
     </task>
     <servers />
   </component>
