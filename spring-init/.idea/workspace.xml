@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac42f98c-20f4-47dd-bcf5-9a1fffa2e868" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules/microservices/recommendation-service/spring-init.microservices.recommendation-service.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/main/java/pe/joedayz/microservices/core/recommendation/services/MessageProcessorConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/test/resources/logback-test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/product-service/src/main/java/pe/joedayz/microservices/core/product/services/MessageProcessorConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/product-service/src/test/resources/logback-test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/microservices/recommendation-service/spring-init.microservices.recommendation-service.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/microservices/recommendation-service/spring-init.microservices.recommendation-service.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/PersistenceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/PersistenceTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/RecommendationServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/RecommendationServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/PersistenceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/PersistenceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/ProductServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/ProductServiceApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +104,7 @@
     "Gradle.ProductServiceApplicationTests.executor": "Run",
     "Gradle.ProductServiceApplicationTests.getProductById.executor": "Run",
     "Gradle.ReactiveTests.testFlux.executor": "Run",
+    "Gradle.RecommendationServiceApplicationTests.deleteRecommendations.executor": "Run",
     "Gradle.RecommendationServiceApplicationTests.duplicateError.executor": "Run",
     "Gradle.RecommendationServiceApplicationTests.executor": "Run",
     "Gradle.RecommendationServiceApplicationTests.getRecommendationsByProductId.executor": "Run",
@@ -124,7 +126,7 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "/Users/josediaz/Projects/joedayz/microservicios2025/Microservices2025/spring-init/api/src/main/java/pe/joedayz/microservices/api",
-    "last_opened_file_path": "/Users/josediaz/Projects/joedayz/microservicios2025/Microservices2025/spring-init/microservices/recommendation-service/src/test/resources",
+    "last_opened_file_path": "/Users/josediaz/Projects/joedayz/microservicios2025/Microservices2025/spring-init/microservices/product-service/src/test/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -140,11 +142,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/microservices/product-service/src/test/resources" />
       <recent name="$PROJECT_DIR$/microservices/recommendation-service/src/test/resources" />
       <recent name="$PROJECT_DIR$/microservices/product-composite-service" />
       <recent name="$PROJECT_DIR$/microservices/product-service" />
       <recent name="$PROJECT_DIR$/microservices/recommendation-service" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -157,7 +159,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.RecommendationServiceApplicationTests.duplicateError">
+  <component name="RunManager" selected="Gradle.PersistenceTests">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -188,7 +190,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersistenceTests (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PersistenceTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -199,9 +201,9 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":microservices:recommendation-service:test" />
+            <option value=":microservices:product-service:test" />
             <option value="--tests" />
-            <option value="&quot;pe.joedayz.microservices.core.recommendation.PersistenceTests&quot;" />
+            <option value="&quot;pe.joedayz.microservices.core.product.PersistenceTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -226,6 +228,30 @@
             <option value=":microservices:recommendation-service:test" />
             <option value="--tests" />
             <option value="&quot;pe.joedayz.microservices.core.recommendation.RecommendationServiceApplicationTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="RecommendationServiceApplicationTests.deleteRecommendations" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":microservices:recommendation-service:test" />
+            <option value="--tests" />
+            <option value="&quot;pe.joedayz.microservices.core.recommendation.RecommendationServiceApplicationTests.deleteRecommendations&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -274,30 +300,6 @@
             <option value=":microservices:recommendation-service:test" />
             <option value="--tests" />
             <option value="&quot;pe.joedayz.microservices.core.recommendation.RecommendationServiceApplicationTests.getRecommendationsByProductId&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="ReviewServiceApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":microservices:review-service:test" />
-            <option value="--tests" />
-            <option value="&quot;pe.joedayz.microservices.core.review.ReviewServiceApplicationTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -413,11 +415,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PersistenceTests" />
+        <item itemvalue="Gradle.RecommendationServiceApplicationTests" />
+        <item itemvalue="Gradle.RecommendationServiceApplicationTests.deleteRecommendations" />
         <item itemvalue="Gradle.RecommendationServiceApplicationTests.duplicateError" />
         <item itemvalue="Gradle.RecommendationServiceApplicationTests.getRecommendationsByProductId" />
-        <item itemvalue="Gradle.RecommendationServiceApplicationTests" />
-        <item itemvalue="Gradle.PersistenceTests (1)" />
-        <item itemvalue="Gradle.ReviewServiceApplicationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -453,7 +455,7 @@
       <workItem from="1740443750052" duration="100000" />
       <workItem from="1740443853832" duration="5072000" />
       <workItem from="1740616785319" duration="6573000" />
-      <workItem from="1741048386043" duration="2815000" />
+      <workItem from="1741048386043" duration="3980000" />
     </task>
     <servers />
   </component>
