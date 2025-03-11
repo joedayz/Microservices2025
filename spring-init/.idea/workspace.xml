@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac42f98c-20f4-47dd-bcf5-9a1fffa2e868" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/IsSameEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/IsSameEventTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/MessagingTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose-partitions.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/services/ProductCompositeIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/services/ProductCompositeIntegration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +128,7 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "/Users/josediaz/Projects/joedayz/microservicios2025/Microservices2025/spring-init/api/src/main/java/pe/joedayz/microservices/api",
-    "last_opened_file_path": "/Users/josediaz/Projects/joedayz/microservicios2025/Microservices2025/spring-init/microservices/product-service/src/test/resources",
+    "last_opened_file_path": "/Users/josediaz/Projects/joedayz/microservicios2025/Microservices2025/spring-init",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -144,11 +144,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/microservices/product-service/src/test/resources" />
       <recent name="$PROJECT_DIR$/microservices/recommendation-service/src/test/resources" />
       <recent name="$PROJECT_DIR$/microservices/product-composite-service" />
       <recent name="$PROJECT_DIR$/microservices/product-service" />
-      <recent name="$PROJECT_DIR$/microservices/recommendation-service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -449,7 +449,7 @@
       <workItem from="1740443853832" duration="5072000" />
       <workItem from="1740616785319" duration="6573000" />
       <workItem from="1741048386043" duration="5718000" />
-      <workItem from="1741653802665" duration="3869000" />
+      <workItem from="1741653802665" duration="4834000" />
     </task>
     <servers />
   </component>
