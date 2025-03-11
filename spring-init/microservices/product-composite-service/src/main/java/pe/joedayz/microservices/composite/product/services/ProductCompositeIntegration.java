@@ -80,7 +80,7 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
 
   @Override
   public Mono<Product> createProduct(Product body) {
-
+    LOG.info("Create product with id: {}", body.getProductId());
     return Mono.fromCallable(() -> {
       sendMessage("products-out-0", new Event(CREATE, body.getProductId(), body));
       return body;
@@ -102,6 +102,7 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
 
   @Override
   public Mono<Void> deleteProduct(int productId) {
+    LOG.info("Delete product with id: {}", productId);
     return Mono.fromRunnable(() ->
             sendMessage("products-out-0", new Event(DELETE, productId, null)))
         .subscribeOn(publishEventScheduler).then();
@@ -109,7 +110,7 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
 
   @Override
   public Mono<Recommendation> createRecommendation(Recommendation body) {
-
+    LOG.info("Create recommendation with productId: {} and recommendationId: {}", body.getProductId(), body.getRecommendationId());
     return Mono.fromCallable(() -> {
       sendMessage("recommendations-out-0", new Event(CREATE, body.getProductId(), body));
       return body;
@@ -137,7 +138,7 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
 
   @Override
   public Mono<Review> createReview(Review body) {
-
+    LOG.info("Create review with productId: {} and review: {}", body.getProductId(), body.getReviewId());
     return Mono.fromCallable(() -> {
       sendMessage("reviews-out-0", new Event(CREATE, body.getProductId(), body));
       return body;

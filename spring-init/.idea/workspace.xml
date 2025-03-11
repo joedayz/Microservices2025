@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac42f98c-20f4-47dd-bcf5-9a1fffa2e868" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/HealthCheckConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/microservices/product-service/spring-init.microservices.product-service.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/microservices/product-service/spring-init.microservices.product-service.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/IsSameEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/IsSameEventTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/MessagingTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/services/ProductCompositeIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/services/ProductCompositeIntegration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,11 +80,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.Build spring-init.executor": "Run",
+    "Gradle.IsSameEventTests.testEventObjectCompare.executor": "Run",
     "Gradle.MapperTests.executor": "Run",
     "Gradle.MapperTests.mapperListTests (1).executor": "Run",
     "Gradle.MapperTests.mapperListTests.executor": "Run",
     "Gradle.MapperTests.mapperTest.executor": "Run",
     "Gradle.MapperTests.mapperTests.executor": "Run",
+    "Gradle.MessagingTests.createCompositeProduct1.executor": "Run",
+    "Gradle.MessagingTests.createCompositeProduct2.executor": "Run",
+    "Gradle.MessagingTests.deleteCompositeProduct.executor": "Run",
     "Gradle.PersistenceTests (1).executor": "Run",
     "Gradle.PersistenceTests.create (1).executor": "Run",
     "Gradle.PersistenceTests.create.executor": "Run",
@@ -117,6 +121,7 @@
     "Gradle.ReviewServiceApplicationTests.getReviewsInvalidParameterNegativeValue.executor": "Run",
     "Gradle.ReviewServiceApplicationTests.getReviewsMissingParameter.executor": "Run",
     "Gradle.ReviewServiceApplicationTests.getReviewsNotFound.executor": "Run",
+    "JUnit.ProductCompositeServiceApplicationTests.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -156,7 +161,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ProductCompositeServiceApplicationTests">
+  <component name="RunManager" selected="Gradle.MessagingTests.deleteCompositeProduct">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -187,31 +192,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersistenceTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":microservices:product-service:test" />
-            <option value="--tests" />
-            <option value="&quot;pe.joedayz.microservices.core.product.PersistenceTests&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="ProductCompositeServiceApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="IsSameEventTests.testEventObjectCompare" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -224,7 +205,7 @@
           <list>
             <option value=":microservices:product-composite-service:test" />
             <option value="--tests" />
-            <option value="&quot;pe.joedayz.microservices.composite.product.ProductCompositeServiceApplicationTests&quot;" />
+            <option value="&quot;pe.joedayz.microservices.composite.product.IsSameEventTests.testEventObjectCompare&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -235,7 +216,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ProductServiceApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MessagingTests.createCompositeProduct1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -246,9 +227,9 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":microservices:product-service:test" />
+            <option value=":microservices:product-composite-service:test" />
             <option value="--tests" />
-            <option value="&quot;pe.joedayz.microservices.core.product.ProductServiceApplicationTests&quot;" />
+            <option value="&quot;pe.joedayz.microservices.composite.product.MessagingTests.createCompositeProduct1&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -259,7 +240,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RecommendationServiceApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MessagingTests.createCompositeProduct2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -270,9 +251,9 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":microservices:recommendation-service:test" />
+            <option value=":microservices:product-composite-service:test" />
             <option value="--tests" />
-            <option value="&quot;pe.joedayz.microservices.core.recommendation.RecommendationServiceApplicationTests&quot;" />
+            <option value="&quot;pe.joedayz.microservices.composite.product.MessagingTests.createCompositeProduct2&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -283,7 +264,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RecommendationServiceApplicationTests.deleteRecommendations" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MessagingTests.deleteCompositeProduct" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -294,9 +275,9 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":microservices:recommendation-service:test" />
+            <option value=":microservices:product-composite-service:test" />
             <option value="--tests" />
-            <option value="&quot;pe.joedayz.microservices.core.recommendation.RecommendationServiceApplicationTests.deleteRecommendations&quot;" />
+            <option value="&quot;pe.joedayz.microservices.composite.product.MessagingTests.deleteCompositeProduct&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -306,6 +287,21 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>true</RunAsTest>
       <method v="2" />
+    </configuration>
+    <configuration name="ProductCompositeServiceApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-init.microservices.product-composite-service.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pe.joedayz.microservices.composite.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pe.joedayz.microservices.composite.product" />
+      <option name="MAIN_CLASS_NAME" value="pe.joedayz.microservices.composite.product.ProductCompositeServiceApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="spring-init" />
@@ -412,19 +408,19 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ProductCompositeServiceApplicationTests" />
-        <item itemvalue="Gradle.ProductServiceApplicationTests" />
-        <item itemvalue="Gradle.PersistenceTests" />
-        <item itemvalue="Gradle.RecommendationServiceApplicationTests" />
-        <item itemvalue="Gradle.RecommendationServiceApplicationTests.deleteRecommendations" />
+        <item itemvalue="Gradle.MessagingTests.deleteCompositeProduct" />
+        <item itemvalue="Gradle.MessagingTests.createCompositeProduct2" />
+        <item itemvalue="Gradle.MessagingTests.createCompositeProduct1" />
+        <item itemvalue="Gradle.IsSameEventTests.testEventObjectCompare" />
+        <item itemvalue="JUnit.ProductCompositeServiceApplicationTests" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.189" />
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.189" />
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.59" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.59" />
       </set>
     </attachedChunks>
   </component>
@@ -452,7 +448,8 @@
       <workItem from="1740443750052" duration="100000" />
       <workItem from="1740443853832" duration="5072000" />
       <workItem from="1740616785319" duration="6573000" />
-      <workItem from="1741048386043" duration="5157000" />
+      <workItem from="1741048386043" duration="5718000" />
+      <workItem from="1741653802665" duration="3869000" />
     </task>
     <servers />
   </component>
