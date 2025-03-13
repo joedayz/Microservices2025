@@ -1,8 +1,5 @@
-package pe.joedayz.microservices.api.composite;
+package pe.joedayz.api.composite.product;
 
-/**
- * @author josediaz
- **/
 public class RecommendationSummary {
 
   private final int recommendationId;
@@ -23,7 +20,6 @@ public class RecommendationSummary {
     this.rate = rate;
     this.content = content;
   }
-
 
   public int getRecommendationId() {
     return recommendationId;

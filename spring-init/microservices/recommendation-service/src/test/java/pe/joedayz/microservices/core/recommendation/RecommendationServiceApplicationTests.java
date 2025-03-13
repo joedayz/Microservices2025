@@ -1,16 +1,11 @@
 package pe.joedayz.microservices.core.recommendation;
 
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
-import static org.springframework.http.HttpStatus.OK;
-import static pe.joedayz.microservices.api.event.Event.Type.CREATE;
-import static pe.joedayz.microservices.api.event.Event.Type.DELETE;
-
-import static org.springframework.http.HttpStatus.BAD_REQUEST;
-import static org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY;
+import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static pe.joedayz.api.event.Event.Type.CREATE;
+import static pe.joedayz.api.event.Event.Type.DELETE;
 
 import java.util.function.Consumer;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,13 +15,13 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import pe.joedayz.microservices.api.core.recommendation.Recommendation;
-import pe.joedayz.microservices.api.exceptions.InvalidInputException;
+import pe.joedayz.api.core.recommendation.Recommendation;
+import pe.joedayz.api.event.Event;
+import pe.joedayz.api.exceptions.InvalidInputException;
 import pe.joedayz.microservices.core.recommendation.persistence.RecommendationRepository;
-import pe.joedayz.microservices.api.event.Event;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-class RecommendationServiceApplicationTests extends MongoDbTestBase{
+class RecommendationServiceApplicationTests extends MongoDbTestBase {
 
 	@Autowired
 	private WebTestClient client;
@@ -38,12 +33,10 @@ class RecommendationServiceApplicationTests extends MongoDbTestBase{
 	@Qualifier("messageProcessor")
 	private Consumer<Event<Integer, Recommendation>> messageProcessor;
 
-
 	@BeforeEach
 	void setupDb() {
 		repository.deleteAll().block();
 	}
-
 
 	@Test
 	void getRecommendationsByProductId() {
@@ -61,6 +54,7 @@ class RecommendationServiceApplicationTests extends MongoDbTestBase{
 				.jsonPath("$[2].productId").isEqualTo(productId)
 				.jsonPath("$[2].recommendationId").isEqualTo(3);
 	}
+
 	@Test
 	void duplicateError() {
 
@@ -73,7 +67,7 @@ class RecommendationServiceApplicationTests extends MongoDbTestBase{
 
 		InvalidInputException thrown =  assertThrows(
 				InvalidInputException.class,
-				()-> sendCreateRecommendationEvent(productId, recommendationId),
+      () -> sendCreateRecommendationEvent(productId, recommendationId),
 				"Expected a InvalidInputException here!");
 		assertEquals("Duplicate key, Product Id: 1, Recommendation Id:1", thrown.getMessage());
 
@@ -87,10 +81,10 @@ class RecommendationServiceApplicationTests extends MongoDbTestBase{
 		int recommendationId = 1;
 
 		sendCreateRecommendationEvent(productId, recommendationId);
-		assertEquals(1, repository.findByProductId(productId).count().block());
+    assertEquals(1, (long)repository.findByProductId(productId).count().block());
 
 		sendDeleteRecommendationEvent(productId);
-		assertEquals(0, repository.findByProductId(productId).count().block());
+    assertEquals(0, (long)repository.findByProductId(productId).count().block());
 
 		sendDeleteRecommendationEvent(productId);
 	}
@@ -127,7 +121,6 @@ class RecommendationServiceApplicationTests extends MongoDbTestBase{
 				.jsonPath("$.path").isEqualTo("/recommendation")
 				.jsonPath("$.message").isEqualTo("Invalid productId: " + productIdInvalid);
 	}
-
 
 	private WebTestClient.BodyContentSpec getAndVerifyRecommendationsByProductId(int productId, HttpStatus expectedStatus) {
 		return getAndVerifyRecommendationsByProductId("?productId=" + productId, expectedStatus);

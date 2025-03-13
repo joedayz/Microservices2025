@@ -3,16 +3,14 @@ package pe.joedayz.microservices.core.recommendation.services;
 import java.util.function.Consumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import pe.joedayz.microservices.api.core.recommendation.Recommendation;
-import pe.joedayz.microservices.api.core.recommendation.RecommendationService;
-import pe.joedayz.microservices.api.event.Event;
-import pe.joedayz.microservices.api.exceptions.EventProcessingException;
+import pe.joedayz.api.core.recommendation.Recommendation;
+import pe.joedayz.api.core.recommendation.RecommendationService;
+import pe.joedayz.api.event.Event;
+import pe.joedayz.api.exceptions.EventProcessingException;
 
-/**
- * @author josediaz
- **/
 @Configuration
 public class MessageProcessorConfig {
 
@@ -20,6 +18,7 @@ public class MessageProcessorConfig {
 
   private final RecommendationService recommendationService;
 
+  @Autowired
   public MessageProcessorConfig(RecommendationService recommendationService) {
     this.recommendationService = recommendationService;
   }
@@ -53,5 +52,4 @@ public class MessageProcessorConfig {
       LOG.info("Message processing done!");
     };
   }
-
 }

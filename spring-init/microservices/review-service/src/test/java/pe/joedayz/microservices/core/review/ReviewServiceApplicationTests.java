@@ -4,9 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
-import static pe.joedayz.microservices.api.event.Event.Type.CREATE;
-import static pe.joedayz.microservices.api.event.Event.Type.DELETE;
-
+import static pe.joedayz.api.event.Event.Type.CREATE;
+import static pe.joedayz.api.event.Event.Type.DELETE;
 
 import java.util.function.Consumer;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,11 +15,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import pe.joedayz.microservices.api.core.review.Review;
-import pe.joedayz.microservices.api.event.Event;
-import pe.joedayz.microservices.api.exceptions.InvalidInputException;
+import pe.joedayz.api.core.review.Review;
+import pe.joedayz.api.event.Event;
+import pe.joedayz.api.exceptions.InvalidInputException;
 import pe.joedayz.microservices.core.review.persistence.ReviewRepository;
-
 
 @SpringBootTest(webEnvironment = RANDOM_PORT, properties = {
     "spring.cloud.stream.defaultBinder=rabbit",
@@ -36,6 +34,11 @@ class ReviewServiceApplicationTests extends MySqlTestBase {
   @Autowired
   @Qualifier("messageProcessor")
   private Consumer<Event<Integer, Review>> messageProcessor;
+
+  //No qualifying bean of type 'java.util.function.Consumer<pe.joedayz.api.event.Event<java.lang.Integer,
+  // pe.joedayz.api.core.review.Review>>' available: expected at least 1 bean which qualifies as
+  // autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)
+  // , @org.springframework.beans.factory.annotation.Qualifier("messageProcessor")}
 
   @BeforeEach
   void setupDb() {

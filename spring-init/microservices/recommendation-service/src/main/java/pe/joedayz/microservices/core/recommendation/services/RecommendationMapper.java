@@ -4,12 +4,9 @@ import java.util.List;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
-import pe.joedayz.microservices.api.core.recommendation.Recommendation;
+import pe.joedayz.api.core.recommendation.Recommendation;
 import pe.joedayz.microservices.core.recommendation.persistence.RecommendationEntity;
 
-/**
- * @author josediaz
- **/
 @Mapper(componentModel = "spring")
 public interface RecommendationMapper {
 

@@ -1,16 +1,15 @@
 package pe.joedayz.microservices.composite.product;
 
-
 import static java.util.Collections.singletonList;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
-import static org.springframework.http.HttpStatus.OK;
-import static pe.joedayz.microservices.api.event.Event.Type.CREATE;
-import static pe.joedayz.microservices.api.event.Event.Type.DELETE;
-import static pe.joedayz.microservices.composite.product.IsSameEvent.sameEventExceptCreatedAt;
+import static org.springframework.http.HttpStatus.ACCEPTED;
 import static reactor.core.publisher.Mono.just;
+import static pe.joedayz.api.event.Event.Type.CREATE;
+import static pe.joedayz.api.event.Event.Type.DELETE;
+import static pe.joedayz.microservices.composite.product.IsSameEvent.sameEventExceptCreatedAt;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,22 +25,19 @@ import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpStatus;
 import org.springframework.messaging.Message;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import pe.joedayz.microservices.api.composite.ProductAggregate;
-import pe.joedayz.microservices.api.composite.RecommendationSummary;
-import pe.joedayz.microservices.api.composite.ReviewSummary;
-import pe.joedayz.microservices.api.core.product.Product;
-import pe.joedayz.microservices.api.core.recommendation.Recommendation;
-import pe.joedayz.microservices.api.core.review.Review;
-import pe.joedayz.microservices.api.event.Event;
+import pe.joedayz.api.composite.product.ProductAggregate;
+import pe.joedayz.api.composite.product.RecommendationSummary;
+import pe.joedayz.api.composite.product.ReviewSummary;
+import pe.joedayz.api.core.product.Product;
+import pe.joedayz.api.core.recommendation.Recommendation;
+import pe.joedayz.api.core.review.Review;
+import pe.joedayz.api.event.Event;
 
-/**
- * @author josediaz
- **/
 @SpringBootTest(
     webEnvironment = RANDOM_PORT,
     properties = {"spring.main.allow-bean-definition-overriding=true"})
 @Import({TestChannelBinderConfiguration.class})
-public class MessagingTests {
+class MessagingTests {
 
   private static final Logger LOG = LoggerFactory.getLogger(MessagingTests.class);
 
@@ -60,15 +56,16 @@ public class MessagingTests {
 
   @Test
   void createCompositeProduct1() {
+
     ProductAggregate composite = new ProductAggregate(1, "name", 1, null, null, null);
-    postAndVerifyProduct(composite, OK);
+    postAndVerifyProduct(composite, ACCEPTED);
 
     final List<String> productMessages = getMessages("products");
     final List<String> recommendationMessages = getMessages("recommendations");
     final List<String> reviewMessages = getMessages("reviews");
 
+    // Assert one expected new product event queued up
     assertEquals(1, productMessages.size());
-
 
     Event<Integer, Product> expectedEvent =
         new Event(CREATE, composite.getProductId(), new Product(composite.getProductId(), composite.getName(), composite.getWeight(), null));
@@ -77,7 +74,6 @@ public class MessagingTests {
     // Assert no recommendation and review events
     assertEquals(0, recommendationMessages.size());
     assertEquals(0, reviewMessages.size());
-
   }
 
   @Test
@@ -86,7 +82,7 @@ public class MessagingTests {
     ProductAggregate composite = new ProductAggregate(1, "name", 1,
         singletonList(new RecommendationSummary(1, "a", 1, "c")),
         singletonList(new ReviewSummary(1, "a", "s", "c")), null);
-    postAndVerifyProduct(composite, OK);
+    postAndVerifyProduct(composite, ACCEPTED);
 
     final List<String> productMessages = getMessages("products");
     final List<String> recommendationMessages = getMessages("recommendations");
@@ -119,7 +115,7 @@ public class MessagingTests {
 
   @Test
   void deleteCompositeProduct() {
-    deleteAndVerifyProduct(1, OK);
+    deleteAndVerifyProduct(1, ACCEPTED);
 
     final List<String> productMessages = getMessages("products");
     final List<String> recommendationMessages = getMessages("recommendations");
@@ -142,22 +138,6 @@ public class MessagingTests {
 
     Event<Integer, Product> expectedReviewEvent = new Event(DELETE, 1, null);
     assertThat(reviewMessages.get(0), is(sameEventExceptCreatedAt(expectedReviewEvent)));
-  }
-
-  private void postAndVerifyProduct(ProductAggregate compositeProduct, HttpStatus expectedStatus) {
-    client.post()
-        .uri("/product-composite")
-        .body(just(compositeProduct), ProductAggregate.class)
-        .exchange()
-        .expectStatus().isEqualTo(expectedStatus);
-  }
-
-
-  private void deleteAndVerifyProduct(int productId, HttpStatus expectedStatus) {
-    client.delete()
-        .uri("/product-composite/" + productId)
-        .exchange()
-        .expectStatus().isEqualTo(expectedStatus);
   }
 
   private void purgeMessages(String bindingName) {
@@ -192,4 +172,18 @@ public class MessagingTests {
     }
   }
 
+  private void postAndVerifyProduct(ProductAggregate compositeProduct, HttpStatus expectedStatus) {
+    client.post()
+      .uri("/product-composite")
+      .body(just(compositeProduct), ProductAggregate.class)
+      .exchange()
+      .expectStatus().isEqualTo(expectedStatus);
+  }
+
+  private void deleteAndVerifyProduct(int productId, HttpStatus expectedStatus) {
+    client.delete()
+      .uri("/product-composite/" + productId)
+      .exchange()
+      .expectStatus().isEqualTo(expectedStatus);
+  }
 }

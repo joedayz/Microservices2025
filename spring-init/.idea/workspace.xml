@@ -5,12 +5,70 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac42f98c-20f4-47dd-bcf5-9a1fffa2e868" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docker-compose-partitions.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/composite/ProductAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/api/composite/product/ProductAggregate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/composite/ProductCompositeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/api/composite/product/ProductCompositeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/composite/RecommendationSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/api/composite/product/RecommendationSummary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/composite/ReviewSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/api/composite/product/ReviewSummary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/composite/ServiceAddresses.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/api/composite/product/ServiceAddresses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/core/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/api/core/product/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/core/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/api/core/product/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/core/recommendation/Recommendation.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/api/core/recommendation/Recommendation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/core/recommendation/RecommendationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/api/core/recommendation/RecommendationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/core/review/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/api/core/review/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/core/review/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/api/core/review/ReviewService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/event/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/api/event/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/exceptions/EventProcessingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/api/exceptions/EventProcessingException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/exceptions/InvalidInputException.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/api/exceptions/InvalidInputException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/microservices/api/exceptions/NotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/pe/joedayz/api/exceptions/NotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-kafka.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-kafka.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-partitions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-partitions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/HealthCheckConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/HealthCheckConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/services/ProductCompositeIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/services/ProductCompositeIntegration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/services/ProductCompositeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/services/ProductCompositeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/IsSameEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/IsSameEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/IsSameEventTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/IsSameEventTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/MessagingTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/MessagingTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/main/java/pe/joedayz/microservices/core/product/ProductServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/main/java/pe/joedayz/microservices/core/product/ProductServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/main/java/pe/joedayz/microservices/core/product/persistence/ProductEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/main/java/pe/joedayz/microservices/core/product/persistence/ProductEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/main/java/pe/joedayz/microservices/core/product/persistence/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/main/java/pe/joedayz/microservices/core/product/persistence/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/main/java/pe/joedayz/microservices/core/product/services/MessageProcessorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/main/java/pe/joedayz/microservices/core/product/services/MessageProcessorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/main/java/pe/joedayz/microservices/core/product/services/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/main/java/pe/joedayz/microservices/core/product/services/ProductMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/main/java/pe/joedayz/microservices/core/product/services/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/main/java/pe/joedayz/microservices/core/product/services/ProductServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/product-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/MapperTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/MapperTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/MongoDbTestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/MongoDbTestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/PersistenceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/PersistenceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/ProductServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/ProductServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/main/java/pe/joedayz/microservices/core/recommendation/RecommendationServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/main/java/pe/joedayz/microservices/core/recommendation/RecommendationServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/main/java/pe/joedayz/microservices/core/recommendation/persistence/RecommendationEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/main/java/pe/joedayz/microservices/core/recommendation/persistence/RecommendationEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/main/java/pe/joedayz/microservices/core/recommendation/persistence/RecommendationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/main/java/pe/joedayz/microservices/core/recommendation/persistence/RecommendationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/main/java/pe/joedayz/microservices/core/recommendation/services/MessageProcessorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/main/java/pe/joedayz/microservices/core/recommendation/services/MessageProcessorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/main/java/pe/joedayz/microservices/core/recommendation/services/RecommendationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/main/java/pe/joedayz/microservices/core/recommendation/services/RecommendationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/main/java/pe/joedayz/microservices/core/recommendation/services/RecommendationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/main/java/pe/joedayz/microservices/core/recommendation/services/RecommendationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/MapperTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/MapperTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/MongoDbTestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/MongoDbTestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/PersistenceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/PersistenceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/RecommendationServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/RecommendationServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/main/java/pe/joedayz/microservices/core/review/ReviewServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/main/java/pe/joedayz/microservices/core/review/ReviewServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/main/java/pe/joedayz/microservices/core/review/persistence/ReviewEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/main/java/pe/joedayz/microservices/core/review/persistence/ReviewEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/main/java/pe/joedayz/microservices/core/review/persistence/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/main/java/pe/joedayz/microservices/core/review/persistence/ReviewRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/main/java/pe/joedayz/microservices/core/review/services/MessageProcessorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/main/java/pe/joedayz/microservices/core/review/services/MessageProcessorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/main/java/pe/joedayz/microservices/core/review/services/ReviewMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/main/java/pe/joedayz/microservices/core/review/services/ReviewMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/main/java/pe/joedayz/microservices/core/review/services/ReviewServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/main/java/pe/joedayz/microservices/core/review/services/ReviewServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/review-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/MapperTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/MapperTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/MySqlTestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/MySqlTestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/PersistenceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/PersistenceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-em-all.bash" beforeDir="false" afterPath="$PROJECT_DIR$/test-em-all.bash" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/src/main/java/pe/joedayz/microservices/util/http/GlobalControllerExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/util/src/main/java/pe/joedayz/util/http/GlobalControllerExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/src/main/java/pe/joedayz/microservices/util/http/HttpErrorInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/util/src/main/java/pe/joedayz/util/http/HttpErrorInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/src/main/java/pe/joedayz/microservices/util/http/ServiceUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/util/src/main/java/pe/joedayz/util/http/ServiceUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +165,7 @@
     "Gradle.ReactiveTests.testFlux.executor": "Run",
     "Gradle.RecommendationServiceApplicationTests.deleteRecommendations.executor": "Run",
     "Gradle.RecommendationServiceApplicationTests.duplicateError.executor": "Run",
-    "Gradle.RecommendationServiceApplicationTests.executor": "Run",
+    "Gradle.RecommendationServiceApplicationTests.executor": "Debug",
     "Gradle.RecommendationServiceApplicationTests.getRecommendationsByProductId.executor": "Run",
     "Gradle.RecommendationServiceApplicationTests.getRecommendationsInvalidParameter.executor": "Run",
     "Gradle.RecommendationServiceApplicationTests.getRecommendationsInvalidParameterNegativeValue.executor": "Run",
@@ -115,8 +173,8 @@
     "Gradle.RecommendationServiceApplicationTests.getRecommendationsNotFound.executor": "Run",
     "Gradle.ReviewServiceApplicationTests.deleteReviews.executor": "Run",
     "Gradle.ReviewServiceApplicationTests.duplicateError.executor": "Run",
-    "Gradle.ReviewServiceApplicationTests.executor": "Run",
-    "Gradle.ReviewServiceApplicationTests.getReviewsByProductId.executor": "Run",
+    "Gradle.ReviewServiceApplicationTests.executor": "Debug",
+    "Gradle.ReviewServiceApplicationTests.getReviewsByProductId.executor": "Debug",
     "Gradle.ReviewServiceApplicationTests.getReviewsInvalidParameter.executor": "Run",
     "Gradle.ReviewServiceApplicationTests.getReviewsInvalidParameterNegativeValue.executor": "Run",
     "Gradle.ReviewServiceApplicationTests.getReviewsMissingParameter.executor": "Run",
@@ -161,7 +219,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.MessagingTests.deleteCompositeProduct">
+  <component name="RunManager" selected="Gradle.ReviewServiceApplicationTests.getReviewsByProductId">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -192,7 +250,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IsSameEventTests.testEventObjectCompare" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MapperTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -203,9 +261,9 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":microservices:product-composite-service:test" />
+            <option value=":microservices:review-service:test" />
             <option value="--tests" />
-            <option value="&quot;pe.joedayz.microservices.composite.product.IsSameEventTests.testEventObjectCompare&quot;" />
+            <option value="&quot;pe.joedayz.microservices.core.review.MapperTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -216,7 +274,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MessagingTests.createCompositeProduct1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PersistenceTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -227,9 +285,9 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":microservices:product-composite-service:test" />
+            <option value=":microservices:review-service:test" />
             <option value="--tests" />
-            <option value="&quot;pe.joedayz.microservices.composite.product.MessagingTests.createCompositeProduct1&quot;" />
+            <option value="&quot;pe.joedayz.microservices.core.review.PersistenceTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -240,7 +298,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MessagingTests.createCompositeProduct2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RecommendationServiceApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -251,9 +309,9 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":microservices:product-composite-service:test" />
+            <option value=":microservices:recommendation-service:test" />
             <option value="--tests" />
-            <option value="&quot;pe.joedayz.microservices.composite.product.MessagingTests.createCompositeProduct2&quot;" />
+            <option value="&quot;pe.joedayz.microservices.core.recommendation.RecommendationServiceApplicationTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -264,7 +322,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MessagingTests.deleteCompositeProduct" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReviewServiceApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -275,9 +333,9 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":microservices:product-composite-service:test" />
+            <option value=":microservices:review-service:test" />
             <option value="--tests" />
-            <option value="&quot;pe.joedayz.microservices.composite.product.MessagingTests.deleteCompositeProduct&quot;" />
+            <option value="&quot;pe.joedayz.microservices.core.review.ReviewServiceApplicationTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -288,20 +346,29 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ProductCompositeServiceApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring-init.microservices.product-composite-service.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pe.joedayz.microservices.composite.product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pe.joedayz.microservices.composite.product" />
-      <option name="MAIN_CLASS_NAME" value="pe.joedayz.microservices.composite.product.ProductCompositeServiceApplicationTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="ReviewServiceApplicationTests.getReviewsByProductId" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":microservices:review-service:test" />
+            <option value="--tests" />
+            <option value="&quot;pe.joedayz.microservices.core.review.ReviewServiceApplicationTests.getReviewsByProductId&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="spring-init" />
@@ -408,11 +475,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.MessagingTests.deleteCompositeProduct" />
-        <item itemvalue="Gradle.MessagingTests.createCompositeProduct2" />
-        <item itemvalue="Gradle.MessagingTests.createCompositeProduct1" />
-        <item itemvalue="Gradle.IsSameEventTests.testEventObjectCompare" />
-        <item itemvalue="JUnit.ProductCompositeServiceApplicationTests" />
+        <item itemvalue="Gradle.ReviewServiceApplicationTests.getReviewsByProductId" />
+        <item itemvalue="Gradle.RecommendationServiceApplicationTests" />
+        <item itemvalue="Gradle.ReviewServiceApplicationTests" />
+        <item itemvalue="Gradle.PersistenceTests" />
+        <item itemvalue="Gradle.MapperTests" />
       </list>
     </recent_temporary>
   </component>
@@ -449,7 +516,9 @@
       <workItem from="1740443853832" duration="5072000" />
       <workItem from="1740616785319" duration="6573000" />
       <workItem from="1741048386043" duration="5718000" />
-      <workItem from="1741653802665" duration="4834000" />
+      <workItem from="1741653802665" duration="4935000" />
+      <workItem from="1741659621557" duration="536000" />
+      <workItem from="1741825976498" duration="4048000" />
     </task>
     <servers />
   </component>
@@ -475,8 +544,28 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/RecommendationServiceApplicationTests.java</url>
-          <line>148</line>
+          <line>141</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/PersistenceTests.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/RecommendationServiceApplicationTests.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java</url>
+          <line>152</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

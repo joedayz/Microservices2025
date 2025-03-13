@@ -1,4 +1,4 @@
-package pe.joedayz.microservices.api.event;
+package pe.joedayz.api.event;
 
 import static java.time.ZonedDateTime.now;
 
@@ -6,10 +6,8 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.ser.ZonedDateTimeSerializer;
 import java.time.ZonedDateTime;
 
-/**
- * @author josediaz
- **/
 public class Event<K, T> {
+
   public enum Type {
     CREATE,
     DELETE
@@ -19,7 +17,6 @@ public class Event<K, T> {
   private final K key;
   private final T data;
   private final ZonedDateTime eventCreatedAt;
-
 
   public Event() {
     this.eventType = null;

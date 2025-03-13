@@ -1,9 +1,7 @@
-package pe.joedayz.microservices.api.composite;
+package pe.joedayz.api.composite.product;
 
-/**
- * @author josediaz
- **/
 public class ReviewSummary {
+
   private final int reviewId;
   private final String author;
   private final String subject;

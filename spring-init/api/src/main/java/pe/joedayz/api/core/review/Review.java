@@ -1,33 +1,34 @@
-package pe.joedayz.microservices.api.core.recommendation;
+package pe.joedayz.api.core.review;
 
-/**
- * @author josediaz
- **/
-public class Recommendation {
-
+public class Review {
   private int productId;
-  private int recommendationId;
+  private int reviewId;
   private String author;
-  private int rate;
+  private String subject;
   private String content;
   private String serviceAddress;
 
-  public Recommendation() {
-    this.productId = 0;
-    this.recommendationId = 0;
-    this.author = null;
-    this.rate = 0;
-    this.content = "";
-    this.serviceAddress = null;
+  public Review() {
+    productId = 0;
+    reviewId = 0;
+    author = null;
+    subject = null;
+    content = null;
+    serviceAddress = null;
   }
 
-  public Recommendation(int productId, int recommendationId, String author, int rate,
-      String content,
+  public Review(
+    int productId,
+    int reviewId,
+    String author,
+    String subject,
+    String content,
       String serviceAddress) {
+
     this.productId = productId;
-    this.recommendationId = recommendationId;
+    this.reviewId = reviewId;
     this.author = author;
-    this.rate = rate;
+    this.subject = subject;
     this.content = content;
     this.serviceAddress = serviceAddress;
   }
@@ -36,16 +37,16 @@ public class Recommendation {
     return productId;
   }
 
-  public int getRecommendationId() {
-    return recommendationId;
+  public int getReviewId() {
+    return reviewId;
   }
 
   public String getAuthor() {
     return author;
   }
 
-  public int getRate() {
-    return rate;
+  public String getSubject() {
+    return subject;
   }
 
   public String getContent() {
@@ -60,16 +61,16 @@ public class Recommendation {
     this.productId = productId;
   }
 
-  public void setRecommendationId(int recommendationId) {
-    this.recommendationId = recommendationId;
+  public void setReviewId(int reviewId) {
+    this.reviewId = reviewId;
   }
 
   public void setAuthor(String author) {
     this.author = author;
   }
 
-  public void setRate(int rate) {
-    this.rate = rate;
+  public void setSubject(String subject) {
+    this.subject = subject;
   }
 
   public void setContent(String content) {

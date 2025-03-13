@@ -5,41 +5,44 @@ import static java.util.logging.Level.FINE;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.web.bind.annotation.RestController;
-import pe.joedayz.microservices.api.core.review.Review;
-import pe.joedayz.microservices.api.core.review.ReviewService;
-import pe.joedayz.microservices.api.exceptions.InvalidInputException;
-import pe.joedayz.microservices.core.review.persistence.ReviewEntity;
-import pe.joedayz.microservices.core.review.persistence.ReviewRepository;
-import pe.joedayz.microservices.util.http.ServiceUtil;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Scheduler;
+import pe.joedayz.api.core.review.Review;
+import pe.joedayz.api.core.review.ReviewService;
+import pe.joedayz.api.exceptions.InvalidInputException;
+import pe.joedayz.microservices.core.review.persistence.ReviewEntity;
+import pe.joedayz.microservices.core.review.persistence.ReviewRepository;
+import pe.joedayz.util.http.ServiceUtil;
 
-/**
- * @author josediaz
- **/
 @RestController
 public class ReviewServiceImpl implements ReviewService {
 
   private static final Logger LOG = LoggerFactory.getLogger(ReviewServiceImpl.class);
-  private final ReviewMapper mapper;
+
   private final ReviewRepository repository;
+
+  private final ReviewMapper mapper;
+
   private final ServiceUtil serviceUtil;
+
   private final Scheduler jdbcScheduler;
 
-  public ReviewServiceImpl(@Qualifier("jdbcScheduler") Scheduler jdbcScheduler, ReviewMapper mapper,
-      ReviewRepository reviewRepository, ServiceUtil serviceUtil) {
+  @Autowired
+  public ReviewServiceImpl(@Qualifier("jdbcScheduler") Scheduler jdbcScheduler, ReviewRepository repository, ReviewMapper mapper, ServiceUtil serviceUtil) {
     this.jdbcScheduler = jdbcScheduler;
-    this.serviceUtil = serviceUtil;
-    this.repository = reviewRepository;
+    this.repository = repository;
     this.mapper = mapper;
+    this.serviceUtil = serviceUtil;
   }
 
   @Override
   public Mono<Review> createReview(Review body) {
+
     if (body.getProductId() < 1) {
       throw new InvalidInputException("Invalid productId: " + body.getProductId());
     }
@@ -47,24 +50,22 @@ public class ReviewServiceImpl implements ReviewService {
         .subscribeOn(jdbcScheduler);
   }
 
-  public Review internalCreateReview(Review body) {
+  private Review internalCreateReview(Review body) {
     try {
       ReviewEntity entity = mapper.apiToEntity(body);
       ReviewEntity newEntity = repository.save(entity);
 
-      LOG.debug("createReview: created a review entity: {}/{}", body.getProductId(),
-          body.getReviewId());
+      LOG.debug("createReview: created a review entity: {}/{}", body.getProductId(), body.getReviewId());
       return mapper.entityToApi(newEntity);
 
     } catch (DataIntegrityViolationException dive) {
-      throw new InvalidInputException(
-          "Duplicate key, Product Id: " + body.getProductId() + ", Review Id:"
-              + body.getReviewId());
+      throw new InvalidInputException("Duplicate key, Product Id: " + body.getProductId() + ", Review Id:" + body.getReviewId());
     }
   }
 
   @Override
   public Flux<Review> getReviews(int productId) {
+
     if (productId < 1) {
       throw new InvalidInputException("Invalid productId: " + productId);
     }
@@ -77,27 +78,31 @@ public class ReviewServiceImpl implements ReviewService {
         .subscribeOn(jdbcScheduler);
   }
 
-  public List<Review> internalGetReviews(int productId) {
+  private List<Review> internalGetReviews(int productId) {
+
     List<ReviewEntity> entityList = repository.findByProductId(productId);
-    List<Review> apiList = mapper.entityListToApiList(entityList);
-    apiList.forEach(r -> r.setServiceAddress(serviceUtil.getServiceAddress()));
+    List<Review> list = mapper.entityListToApiList(entityList);
+    list.forEach(e -> e.setServiceAddress(serviceUtil.getServiceAddress()));
 
-    LOG.debug("getReviews: response size: {}", apiList.size());
+    LOG.debug("Response size: {}", list.size());
 
-    return apiList;
+    return list;
   }
 
   @Override
   public Mono<Void> deleteReviews(int productId) {
+
     if (productId < 1) {
       throw new InvalidInputException("Invalid productId: " + productId);
     }
-    return Mono.fromRunnable(() -> internalDeleteReviews(productId))
-        .subscribeOn(jdbcScheduler).then();
+
+    return Mono.fromRunnable(() -> internalDeleteReviews(productId)).subscribeOn(jdbcScheduler).then();
   }
 
-  public void internalDeleteReviews(int productId) {
+  private void internalDeleteReviews(int productId) {
+
     LOG.debug("deleteReviews: tries to delete reviews for the product with productId: {}", productId);
+
     repository.deleteAll(repository.findByProductId(productId));
   }
 }

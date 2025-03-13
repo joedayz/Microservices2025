@@ -1,20 +1,16 @@
-package pe.joedayz.microservices.api.core.product;
+package pe.joedayz.api.core.product;
 
-/**
- * @author josediaz
- **/
 public class Product {
-
   private int productId;
   private String name;
   private int weight;
   private String serviceAddress;
 
   public Product() {
-    this.productId = 0;
-    this.name = null;
-    this.weight = 0;
-    this.serviceAddress = null;
+    productId = 0;
+    name = null;
+    weight = 0;
+    serviceAddress = null;
   }
 
   public Product(int productId, String name, int weight, String serviceAddress) {

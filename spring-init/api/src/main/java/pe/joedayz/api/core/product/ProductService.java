@@ -1,4 +1,4 @@
-package pe.joedayz.microservices.api.core.product;
+package pe.joedayz.api.core.product;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

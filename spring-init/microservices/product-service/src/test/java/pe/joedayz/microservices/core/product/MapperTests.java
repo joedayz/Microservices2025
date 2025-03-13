@@ -1,18 +1,13 @@
 package pe.joedayz.microservices.core.product;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
-import pe.joedayz.microservices.api.core.product.Product;
+import pe.joedayz.api.core.product.Product;
 import pe.joedayz.microservices.core.product.persistence.ProductEntity;
 import pe.joedayz.microservices.core.product.services.ProductMapper;
 
-/**
- * @author josediaz
- **/
 class MapperTests {
 
   private ProductMapper mapper = Mappers.getMapper(ProductMapper.class);

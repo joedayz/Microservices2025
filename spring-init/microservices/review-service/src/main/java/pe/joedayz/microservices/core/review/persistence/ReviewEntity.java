@@ -1,21 +1,14 @@
 package pe.joedayz.microservices.core.review.persistence;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Index;
-import jakarta.persistence.Table;
-import jakarta.persistence.Version;
+import static java.lang.String.format;
 
-/**
- * @author josediaz
- **/
+import jakarta.persistence.*;
+
 @Entity
 @Table(name = "reviews", indexes = { @Index(name = "reviews_unique_idx", unique = true, columnList = "productId,reviewId") })
 public class ReviewEntity {
 
-  @Id
-  @GeneratedValue
+  @Id @GeneratedValue
   private int id;
 
   @Version
@@ -36,6 +29,11 @@ public class ReviewEntity {
     this.author = author;
     this.subject = subject;
     this.content = content;
+  }
+
+  @Override
+  public String toString() {
+    return format("ReviewEntity: %s/%d", productId, reviewId);
   }
 
   public int getId() {
@@ -94,4 +92,3 @@ public class ReviewEntity {
     this.content = content;
   }
 }
-

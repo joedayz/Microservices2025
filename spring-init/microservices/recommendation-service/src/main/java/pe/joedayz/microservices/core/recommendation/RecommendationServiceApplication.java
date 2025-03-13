@@ -44,5 +44,4 @@ public class RecommendationServiceApplication {
     ReactiveIndexOperations indexOps = mongoTemplate.indexOps(RecommendationEntity.class);
     resolver.resolveIndexFor(RecommendationEntity.class).forEach(e -> indexOps.ensureIndex(e).block());
   }
-
 }

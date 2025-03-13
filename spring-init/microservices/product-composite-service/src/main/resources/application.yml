@@ -93,15 +93,15 @@ spring.cloud.stream:
       producer:
         required-groups: auditGroup
 
+spring.cloud.stream.kafka.binder:
+  brokers: 127.0.0.1
+  defaultBrokerPort: 9092
+
 spring.rabbitmq:
   host: 127.0.0.1
   port: 5672
   username: guest
   password: guest
-
-spring.cloud.stream.kafka.binder:
-  brokers: 127.0.0.1
-  defaultBrokerPort: 9092
 
 logging:
   level:
@@ -111,12 +111,10 @@ logging:
 
 management.endpoint.health.show-details: "ALWAYS"
 management.endpoints.web.exposure.include: "*"
-
 ---
-
 spring.config.activate.on-profile: docker
-server:
-  port: 8080
+
+server.port: 8080
 
 app:
   product-service:

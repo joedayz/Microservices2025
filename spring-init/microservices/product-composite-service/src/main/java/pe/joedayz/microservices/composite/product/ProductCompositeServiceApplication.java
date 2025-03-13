@@ -1,6 +1,5 @@
 package pe.joedayz.microservices.composite.product;
 
-
 import io.swagger.v3.oas.models.ExternalDocumentation;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
@@ -14,7 +13,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.web.client.RestTemplate;
 import reactor.core.scheduler.Scheduler;
 import reactor.core.scheduler.Schedulers;
 
@@ -35,11 +33,6 @@ public class ProductCompositeServiceApplication {
 	@Value("${api.common.contact.name}")    String apiContactName;
 	@Value("${api.common.contact.url}")     String apiContactUrl;
 	@Value("${api.common.contact.email}")   String apiContactEmail;
-
-	public static void main(String[] args) {
-		SpringApplication.run(ProductCompositeServiceApplication.class, args);
-	}
-
 
 	/**
 	 * Will exposed on $HOST:$PORT/swagger-ui.html
@@ -82,5 +75,9 @@ public class ProductCompositeServiceApplication {
 		LOG.info("Creates a messagingScheduler with connectionPoolSize = {}", threadPoolSize);
 		return Schedulers.newBoundedElastic(threadPoolSize, taskQueueSize, "publish-pool");
 	}
+
+  public static void main(String[] args) {
+    SpringApplication.run(ProductCompositeServiceApplication.class, args);
+  }
 
 }

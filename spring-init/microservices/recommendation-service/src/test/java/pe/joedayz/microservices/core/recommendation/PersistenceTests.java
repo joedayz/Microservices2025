@@ -2,9 +2,7 @@ package pe.joedayz.microservices.core.recommendation;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,11 +14,8 @@ import org.springframework.dao.OptimisticLockingFailureException;
 import pe.joedayz.microservices.core.recommendation.persistence.RecommendationEntity;
 import pe.joedayz.microservices.core.recommendation.persistence.RecommendationRepository;
 
-/**
- * @author josediaz
- **/
 @DataMongoTest
-public class PersistenceTests extends MongoDbTestBase {
+class PersistenceTests extends MongoDbTestBase {
 
   @Autowired
   private RecommendationRepository repository;
@@ -37,6 +32,7 @@ public class PersistenceTests extends MongoDbTestBase {
     assertEqualsRecommendation(entity, savedEntity);
   }
 
+
   @Test
   void create() {
 
@@ -48,7 +44,6 @@ public class PersistenceTests extends MongoDbTestBase {
 
     assertEquals(2, (long)repository.count().block());
   }
-
 
   @Test
   void update() {

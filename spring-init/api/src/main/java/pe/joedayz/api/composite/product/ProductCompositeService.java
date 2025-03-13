@@ -1,19 +1,13 @@
-package pe.joedayz.microservices.api.composite;
+package pe.joedayz.api.composite.product;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
-/**
- * @author josediaz
- **/
 @Tag(name = "ProductComposite", description = "REST API for composite product information.")
 public interface ProductCompositeService {
 
@@ -33,11 +27,11 @@ public interface ProductCompositeService {
       @ApiResponse(responseCode = "400", description = "${api.responseCodes.badRequest.description}"),
       @ApiResponse(responseCode = "422", description = "${api.responseCodes.unprocessableEntity.description}")
   })
+  @ResponseStatus(HttpStatus.ACCEPTED)
   @PostMapping(
       value    = "/product-composite",
       consumes = "application/json")
   Mono<Void> createProduct(@RequestBody ProductAggregate body);
-
 
   /**
    * Sample usage: "curl $HOST:$PORT/product-composite/1".
@@ -54,8 +48,8 @@ public interface ProductCompositeService {
       @ApiResponse(responseCode = "404", description = "${api.responseCodes.notFound.description}"),
       @ApiResponse(responseCode = "422", description = "${api.responseCodes.unprocessableEntity.description}")
   })
-  @GetMapping
-      (value = "/product-composite/{productId}",
+  @GetMapping(
+    value = "/product-composite/{productId}",
           produces = "application/json")
   Mono<ProductAggregate> getProduct(@PathVariable int productId);
 
@@ -71,6 +65,7 @@ public interface ProductCompositeService {
       @ApiResponse(responseCode = "400", description = "${api.responseCodes.badRequest.description}"),
       @ApiResponse(responseCode = "422", description = "${api.responseCodes.unprocessableEntity.description}")
   })
+  @ResponseStatus(HttpStatus.ACCEPTED)
   @DeleteMapping(value = "/product-composite/{productId}")
   Mono<Void> deleteProduct(@PathVariable int productId);
 }

@@ -10,9 +10,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import pe.joedayz.microservices.composite.product.services.ProductCompositeIntegration;
 
-/**
- * @author josediaz
- **/
 @Configuration
 public class HealthCheckConfiguration {
 
@@ -21,11 +18,12 @@ public class HealthCheckConfiguration {
 
   @Bean
   ReactiveHealthContributor coreServices() {
+
     final Map<String, ReactiveHealthIndicator> registry = new LinkedHashMap<>();
 
-    registry.put("product", ()-> integration.getProductHealth());
-    registry.put("product", ()-> integration.getProductHealth());
-    registry.put("product", ()-> integration.getProductHealth());
+    registry.put("product", () -> integration.getProductHealth());
+    registry.put("recommendation", () -> integration.getRecommendationHealth());
+    registry.put("review", () -> integration.getReviewHealth());
 
     return CompositeReactiveHealthContributor.fromMap(registry);
   }

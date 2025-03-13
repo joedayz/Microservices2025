@@ -6,14 +6,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import pe.joedayz.microservices.api.core.product.Product;
-import pe.joedayz.microservices.api.core.product.ProductService;
-import pe.joedayz.microservices.api.event.Event;
-import pe.joedayz.microservices.api.exceptions.EventProcessingException;
+import pe.joedayz.api.core.product.Product;
+import pe.joedayz.api.core.product.ProductService;
+import pe.joedayz.api.event.Event;
+import pe.joedayz.api.exceptions.EventProcessingException;
 
-/**
- * @author josediaz
- **/
 @Configuration
 public class MessageProcessorConfig {
 

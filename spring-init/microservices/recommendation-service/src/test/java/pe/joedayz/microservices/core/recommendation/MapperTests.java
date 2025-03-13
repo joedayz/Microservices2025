@@ -1,26 +1,22 @@
 package pe.joedayz.microservices.core.recommendation;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Collections;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
-import pe.joedayz.microservices.api.core.recommendation.Recommendation;
+import pe.joedayz.api.core.recommendation.Recommendation;
 import pe.joedayz.microservices.core.recommendation.persistence.RecommendationEntity;
 import pe.joedayz.microservices.core.recommendation.services.RecommendationMapper;
 
-/**
- * @author josediaz
- **/
-public class MapperTests {
-  private RecommendationMapper mapper = Mappers.getMapper(RecommendationMapper.class);
+class MapperTests {
 
+  private RecommendationMapper mapper = Mappers.getMapper(RecommendationMapper.class);
 
   @Test
   void mapperTests() {
+
     assertNotNull(mapper);
 
     Recommendation api = new Recommendation(1, 2, "a", 4, "C", "adr");
@@ -32,6 +28,15 @@ public class MapperTests {
     assertEquals(api.getAuthor(), entity.getAuthor());
     assertEquals(api.getRate(), entity.getRating());
     assertEquals(api.getContent(), entity.getContent());
+
+    Recommendation api2 = mapper.entityToApi(entity);
+
+    assertEquals(api.getProductId(), api2.getProductId());
+    assertEquals(api.getRecommendationId(), api2.getRecommendationId());
+    assertEquals(api.getAuthor(), api2.getAuthor());
+    assertEquals(api.getRate(), api2.getRate());
+    assertEquals(api.getContent(), api2.getContent());
+    assertNull(api2.getServiceAddress());
   }
 
   @Test
@@ -65,5 +70,4 @@ public class MapperTests {
     assertEquals(api.getContent(), api2.getContent());
     assertNull(api2.getServiceAddress());
   }
-
 }

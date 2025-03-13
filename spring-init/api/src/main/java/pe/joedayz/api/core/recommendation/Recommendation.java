@@ -1,33 +1,34 @@
-package pe.joedayz.microservices.api.core.review;
+package pe.joedayz.api.core.recommendation;
 
-/**
- * @author josediaz
- **/
-public class Review {
-
+public class Recommendation {
   private int productId;
-  private int reviewId;
+  private int recommendationId;
   private String author;
-  private String subject;
+  private int rate;
   private String content;
   private String serviceAddress;
 
-  public Review() {
-    this.productId = 0;
-    this.reviewId = 0;
-    this.author = null;
-    this.subject = null;
-    this.content = null;
-    this.serviceAddress = null;
-
+  public Recommendation() {
+    productId = 0;
+    recommendationId = 0;
+    author = null;
+    rate = 0;
+    content = null;
+    serviceAddress = null;
   }
 
-  public Review(int productId, int reviewId, String author, String subject, String content,
+  public Recommendation(
+    int productId,
+    int recommendationId,
+    String author,
+    int rate,
+      String content,
       String serviceAddress) {
+
     this.productId = productId;
-    this.reviewId = reviewId;
+    this.recommendationId = recommendationId;
     this.author = author;
-    this.subject = subject;
+    this.rate = rate;
     this.content = content;
     this.serviceAddress = serviceAddress;
   }
@@ -36,16 +37,16 @@ public class Review {
     return productId;
   }
 
-  public int getReviewId() {
-    return reviewId;
+  public int getRecommendationId() {
+    return recommendationId;
   }
 
   public String getAuthor() {
     return author;
   }
 
-  public String getSubject() {
-    return subject;
+  public int getRate() {
+    return rate;
   }
 
   public String getContent() {
@@ -60,16 +61,16 @@ public class Review {
     this.productId = productId;
   }
 
-  public void setReviewId(int reviewId) {
-    this.reviewId = reviewId;
+  public void setRecommendationId(int recommendationId) {
+    this.recommendationId = recommendationId;
   }
 
   public void setAuthor(String author) {
     this.author = author;
   }
 
-  public void setSubject(String subject) {
-    this.subject = subject;
+  public void setRate(int rate) {
+    this.rate = rate;
   }
 
   public void setContent(String content) {

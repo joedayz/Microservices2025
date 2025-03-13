@@ -9,16 +9,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
-import pe.joedayz.microservices.api.composite.ProductAggregate;
-import pe.joedayz.microservices.api.composite.ProductCompositeService;
-import pe.joedayz.microservices.api.composite.RecommendationSummary;
-import pe.joedayz.microservices.api.composite.ReviewSummary;
-import pe.joedayz.microservices.api.composite.ServiceAddresses;
-import pe.joedayz.microservices.api.core.product.Product;
-import pe.joedayz.microservices.api.core.recommendation.Recommendation;
-import pe.joedayz.microservices.api.core.review.Review;
-import pe.joedayz.microservices.util.http.ServiceUtil;
+import pe.joedayz.api.composite.product.ProductAggregate;
+import pe.joedayz.api.composite.product.ProductCompositeService;
+import pe.joedayz.api.composite.product.RecommendationSummary;
+import pe.joedayz.api.composite.product.ReviewSummary;
+import pe.joedayz.api.composite.product.ServiceAddresses;
 import reactor.core.publisher.Mono;
+import pe.joedayz.api.core.product.Product;
+import pe.joedayz.api.core.recommendation.Recommendation;
+import pe.joedayz.api.core.review.Review;
+import pe.joedayz.util.http.ServiceUtil;
 
 @RestController
 public class ProductCompositeServiceImpl implements ProductCompositeService {
@@ -26,19 +26,16 @@ public class ProductCompositeServiceImpl implements ProductCompositeService {
   private static final Logger LOG = LoggerFactory.getLogger(ProductCompositeServiceImpl.class);
 
   private final ServiceUtil serviceUtil;
-  private ProductCompositeIntegration integration;
+  private final ProductCompositeIntegration integration;
 
   @Autowired
-  public ProductCompositeServiceImpl(
-      ServiceUtil serviceUtil, ProductCompositeIntegration integration) {
-
+  public ProductCompositeServiceImpl(ServiceUtil serviceUtil, ProductCompositeIntegration integration) {
     this.serviceUtil = serviceUtil;
     this.integration = integration;
   }
 
   @Override
   public Mono<Void> createProduct(ProductAggregate body) {
-
 
     try {
 
@@ -74,7 +71,6 @@ public class ProductCompositeServiceImpl implements ProductCompositeService {
       throw re;
     }
   }
-
 
   @Override
   public Mono<ProductAggregate> getProduct(int productId) {

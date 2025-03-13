@@ -6,15 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.dao.OptimisticLockingFailureException;
+import reactor.test.StepVerifier;
 import pe.joedayz.microservices.core.product.persistence.ProductEntity;
 import pe.joedayz.microservices.core.product.persistence.ProductRepository;
-import reactor.test.StepVerifier;
 
-/**
- * @author josediaz
- **/
 @DataMongoTest
-public class PersistenceTests extends MongoDbTestBase {
+class PersistenceTests extends MongoDbTestBase {
 
   @Autowired
   private ProductRepository repository;
@@ -30,22 +27,22 @@ public class PersistenceTests extends MongoDbTestBase {
         .expectNextMatches(createdEntity -> {
           savedEntity = createdEntity;
           return areProductEqual(entity, savedEntity);
-        }).verifyComplete();
+      })
+      .verifyComplete();
   }
+
 
   @Test
   void create() {
-
     ProductEntity newEntity = new ProductEntity(2, "n", 2);
+
     StepVerifier.create(repository.save(newEntity))
-        .expectNextMatches(
-            createdEntity -> newEntity.getProductId() == createdEntity.getProductId())
+      .expectNextMatches(createdEntity -> newEntity.getProductId() == createdEntity.getProductId())
         .verifyComplete();
 
     StepVerifier.create(repository.findById(newEntity.getId()))
             .expectNextMatches(foundEntity -> areProductEqual(newEntity, foundEntity))
                 .verifyComplete();
-
 
     StepVerifier.create(repository.count()).expectNext(2L).verifyComplete();
   }
@@ -72,6 +69,7 @@ public class PersistenceTests extends MongoDbTestBase {
 
   @Test
   void getByProductId() {
+
     StepVerifier.create(repository.findByProductId(savedEntity.getProductId()))
         .expectNextMatches(foundEntity -> areProductEqual(savedEntity, foundEntity))
         .verifyComplete();
@@ -95,10 +93,10 @@ public class PersistenceTests extends MongoDbTestBase {
     repository.save(entity1).block();
 
     // Update the entity using the second entity object.
-    // This should fail since the second entity now holds an old version number, i.e. an Optimistic Lock Error
+    // This should fail since the second entity now holds a old version number, i.e. a Optimistic Lock Error
     StepVerifier.create(repository.save(entity2)).expectError(OptimisticLockingFailureException.class).verify();
 
-    // Get the updated entity from the database and verify its new state
+    // Get the updated entity from the database and verify its new sate
     StepVerifier.create(repository.findById(savedEntity.getId()))
         .expectNextMatches(foundEntity ->
             foundEntity.getVersion() == 1
@@ -106,12 +104,12 @@ public class PersistenceTests extends MongoDbTestBase {
         .verifyComplete();
   }
 
-
   private boolean areProductEqual(ProductEntity expectedEntity, ProductEntity actualEntity) {
-    return (expectedEntity.getId().equals(actualEntity.getId()))
-        && (expectedEntity.getName().equals(actualEntity.getName()))
+    return
+      (expectedEntity.getId().equals(actualEntity.getId()))
         && (expectedEntity.getVersion() == actualEntity.getVersion())
         && (expectedEntity.getProductId() == actualEntity.getProductId())
+      && (expectedEntity.getName().equals(actualEntity.getName()))
         && (expectedEntity.getWeight() == actualEntity.getWeight());
   }
 }

@@ -1,30 +1,27 @@
 package pe.joedayz.microservices.core.review;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Collections;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
-import pe.joedayz.microservices.api.core.review.Review;
+import pe.joedayz.api.core.review.Review;
 import pe.joedayz.microservices.core.review.persistence.ReviewEntity;
 import pe.joedayz.microservices.core.review.services.ReviewMapper;
 
-/**
- * @author josediaz
- **/
-public class MapperTests
-{
+
+class MapperTests {
 
   private ReviewMapper mapper = Mappers.getMapper(ReviewMapper.class);
 
   @Test
-  void mapperTest(){
+  void mapperTests() {
+
     assertNotNull(mapper);
 
-    Review api = new Review(1, 2, "a", "s", "C", "addr");
+    Review api = new Review(1, 2, "a", "s", "C", "adr");
+
     ReviewEntity entity = mapper.apiToEntity(api);
 
     assertEquals(api.getProductId(), entity.getProductId());

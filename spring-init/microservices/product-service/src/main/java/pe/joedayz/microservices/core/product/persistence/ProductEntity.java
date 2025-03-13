@@ -1,21 +1,18 @@
 package pe.joedayz.microservices.core.product.persistence;
 
+import static java.lang.String.format;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-/**
- * @author josediaz
- **/
 @Document(collection = "products")
 public class ProductEntity {
 
-  @Id
-  private String id;
+  @Id private String id;
 
-  @Version
-  private Integer version;
+  @Version private Integer version;
 
   @Indexed(unique = true)
   private int productId;
@@ -29,6 +26,11 @@ public class ProductEntity {
     this.productId = productId;
     this.name = name;
     this.weight = weight;
+  }
+
+  @Override
+  public String toString() {
+    return format("ProductEntity: %s", productId);
   }
 
   public String getId() {

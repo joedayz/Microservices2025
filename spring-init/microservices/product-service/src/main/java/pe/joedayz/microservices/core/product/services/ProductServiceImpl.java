@@ -7,18 +7,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.web.bind.annotation.RestController;
-import pe.joedayz.microservices.api.core.product.Product;
-import pe.joedayz.microservices.api.core.product.ProductService;
-import pe.joedayz.microservices.api.exceptions.InvalidInputException;
-import pe.joedayz.microservices.api.exceptions.NotFoundException;
+import reactor.core.publisher.Mono;
+import pe.joedayz.api.core.product.Product;
+import pe.joedayz.api.core.product.ProductService;
+import pe.joedayz.api.exceptions.InvalidInputException;
+import pe.joedayz.api.exceptions.NotFoundException;
 import pe.joedayz.microservices.core.product.persistence.ProductEntity;
 import pe.joedayz.microservices.core.product.persistence.ProductRepository;
-import pe.joedayz.microservices.util.http.ServiceUtil;
-import reactor.core.publisher.Mono;
+import pe.joedayz.util.http.ServiceUtil;
 
-/**
- * @author josediaz
- **/
 @RestController
 public class ProductServiceImpl implements ProductService {
 
@@ -31,8 +28,7 @@ public class ProductServiceImpl implements ProductService {
   private final ProductMapper mapper;
 
   @Autowired
-  public ProductServiceImpl(ProductRepository repository, ProductMapper mapper,
-      ServiceUtil serviceUtil) {
+  public ProductServiceImpl(ProductRepository repository, ProductMapper mapper, ServiceUtil serviceUtil) {
     this.repository = repository;
     this.mapper = mapper;
     this.serviceUtil = serviceUtil;
@@ -46,16 +42,19 @@ public class ProductServiceImpl implements ProductService {
     }
 
     ProductEntity entity = mapper.apiToEntity(body);
-    return  repository.save(entity)
+    Mono<Product> newEntity = repository.save(entity)
         .log(LOG.getName(), FINE)
         .onErrorMap(
             DuplicateKeyException.class,
             ex -> new InvalidInputException("Duplicate key, Product Id: " + body.getProductId()))
         .map(e -> mapper.entityToApi(e));
+
+    return newEntity;
   }
 
   @Override
   public Mono<Product> getProduct(int productId) {
+
     if (productId < 1) {
       throw new InvalidInputException("Invalid productId: " + productId);
     }
@@ -71,15 +70,13 @@ public class ProductServiceImpl implements ProductService {
 
   @Override
   public Mono<Void> deleteProduct(int productId) {
+
     if (productId < 1) {
       throw new InvalidInputException("Invalid productId: " + productId);
     }
 
     LOG.debug("deleteProduct: tries to delete an entity with productId: {}", productId);
-    return repository.findByProductId(productId)
-        .log(LOG.getName(), FINE)
-        .map(e -> repository.delete(e))
-        .flatMap(e -> e);
+    return repository.findByProductId(productId).log(LOG.getName(), FINE).map(e -> repository.delete(e)).flatMap(e -> e);
   }
 
   private Product setServiceAddress(Product e) {

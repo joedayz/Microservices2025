@@ -4,12 +4,9 @@ import java.util.List;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
-import pe.joedayz.microservices.api.core.review.Review;
+import pe.joedayz.api.core.review.Review;
 import pe.joedayz.microservices.core.review.persistence.ReviewEntity;
 
-/**
- * @author josediaz
- **/
 @Mapper(componentModel = "spring")
 public interface ReviewMapper {
 
@@ -20,11 +17,11 @@ public interface ReviewMapper {
 
   @Mappings({
       @Mapping(target = "id", ignore = true),
-      @Mapping(target = "version", ignore = true),
+    @Mapping(target = "version", ignore = true)
   })
   ReviewEntity apiToEntity(Review api);
 
-  List<Review> entityListToApiList(List<ReviewEntity> entityList);
+  List<Review> entityListToApiList(List<ReviewEntity> entity);
 
-  List<ReviewEntity> apiListToEntityList(List<Review> apiList);
+  List<ReviewEntity> apiListToEntityList(List<Review> api);
 }

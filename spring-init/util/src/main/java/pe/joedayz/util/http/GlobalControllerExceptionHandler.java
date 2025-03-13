@@ -1,4 +1,4 @@
-package pe.joedayz.microservices.util.http;
+package pe.joedayz.util.http;
 
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
@@ -12,16 +12,22 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import pe.joedayz.microservices.api.exceptions.InvalidInputException;
-import pe.joedayz.microservices.api.exceptions.NotFoundException;
+import pe.joedayz.api.exceptions.BadRequestException;
+import pe.joedayz.api.exceptions.InvalidInputException;
+import pe.joedayz.api.exceptions.NotFoundException;
 
-/**
- * @author josediaz
- **/
 @RestControllerAdvice
 class GlobalControllerExceptionHandler {
 
   private static final Logger LOG = LoggerFactory.getLogger(GlobalControllerExceptionHandler.class);
+
+  @ResponseStatus(BAD_REQUEST)
+  @ExceptionHandler(BadRequestException.class)
+  public @ResponseBody HttpErrorInfo handleBadRequestExceptions(
+    ServerHttpRequest request, BadRequestException ex) {
+
+    return createHttpErrorInfo(BAD_REQUEST, request, ex);
+  }
 
   @ResponseStatus(NOT_FOUND)
   @ExceptionHandler(NotFoundException.class)

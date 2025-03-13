@@ -1,9 +1,7 @@
-package pe.joedayz.microservices.api.exceptions;
+package pe.joedayz.api.exceptions;
 
-/**
- * @author josediaz
- **/
 public class NotFoundException extends RuntimeException {
+  public NotFoundException() {}
 
   public NotFoundException(String message) {
     super(message);

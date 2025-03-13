@@ -3,9 +3,6 @@ package pe.joedayz.microservices.core.recommendation;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
 import org.testcontainers.containers.MongoDBContainer;
 
-/**
- * @author josediaz
- **/
 public abstract class MongoDbTestBase {
 
   @ServiceConnection

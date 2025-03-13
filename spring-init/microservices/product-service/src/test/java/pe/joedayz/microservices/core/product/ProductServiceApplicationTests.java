@@ -1,17 +1,11 @@
 package pe.joedayz.microservices.core.product;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
-import static org.springframework.http.HttpStatus.BAD_REQUEST;
-import static org.springframework.http.HttpStatus.NOT_FOUND;
-import static org.springframework.http.HttpStatus.OK;
-import static org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY;
+import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
-import static pe.joedayz.microservices.api.event.Event.Type.CREATE;
-import static pe.joedayz.microservices.api.event.Event.Type.DELETE;
+import static pe.joedayz.api.event.Event.Type.CREATE;
+import static pe.joedayz.api.event.Event.Type.DELETE;
 
 import java.util.function.Consumer;
 import org.junit.jupiter.api.BeforeEach;
@@ -21,17 +15,19 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import pe.joedayz.microservices.api.core.product.Product;
-import pe.joedayz.microservices.api.event.Event;
-import pe.joedayz.microservices.api.exceptions.InvalidInputException;
+import pe.joedayz.api.core.product.Product;
+import pe.joedayz.api.event.Event;
+import pe.joedayz.api.exceptions.InvalidInputException;
 import pe.joedayz.microservices.core.product.persistence.ProductRepository;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 class ProductServiceApplicationTests extends MongoDbTestBase {
 
-	@Autowired private WebTestClient client;
+  @Autowired
+  private WebTestClient client;
 
-	@Autowired private ProductRepository repository;
+  @Autowired
+  private ProductRepository repository;
 
 	@Autowired
 	@Qualifier("messageProcessor")
@@ -41,7 +37,6 @@ class ProductServiceApplicationTests extends MongoDbTestBase {
 	void setupDb() {
 		repository.deleteAll().block();
 	}
-
 
 	@Test
 	void getProductById() {
@@ -60,7 +55,6 @@ class ProductServiceApplicationTests extends MongoDbTestBase {
 				.jsonPath("$.productId").isEqualTo(productId);
 	}
 
-
 	@Test
 	void duplicateError() {
 
@@ -78,6 +72,7 @@ class ProductServiceApplicationTests extends MongoDbTestBase {
 				"Expected a InvalidInputException here!");
 		assertEquals("Duplicate key, Product Id: " + productId, thrown.getMessage());
 	}
+
 	@Test
 	void deleteProduct() {
 
@@ -143,5 +138,4 @@ class ProductServiceApplicationTests extends MongoDbTestBase {
 		Event<Integer, Product> event = new Event(DELETE, productId, null);
 		messageProcessor.accept(event);
 	}
-
 }

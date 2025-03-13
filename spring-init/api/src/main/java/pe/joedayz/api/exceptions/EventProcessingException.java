@@ -1,8 +1,5 @@
-package pe.joedayz.microservices.api.exceptions;
+package pe.joedayz.api.exceptions;
 
-/**
- * @author josediaz
- **/
 public class EventProcessingException extends RuntimeException {
   public EventProcessingException() {
   }
