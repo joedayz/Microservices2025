@@ -20,7 +20,7 @@ import pe.joedayz.api.event.Event;
 import pe.joedayz.api.exceptions.InvalidInputException;
 import pe.joedayz.microservices.core.product.persistence.ProductRepository;
 
-@SpringBootTest(webEnvironment = RANDOM_PORT)
+@SpringBootTest(webEnvironment = RANDOM_PORT, properties = {"eureka.client.enabled=false"})
 class ProductServiceApplicationTests extends MongoDbTestBase {
 
   @Autowired

@@ -26,10 +26,7 @@ dependencies {
 	implementation 'org.springdoc:springdoc-openapi-starter-common:2.8.3'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'io.projectreactor:reactor-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
-
 
 tasks.named('test') {
 	useJUnitPlatform()

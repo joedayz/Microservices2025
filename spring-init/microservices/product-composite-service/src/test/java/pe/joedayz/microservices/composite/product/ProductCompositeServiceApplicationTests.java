@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -22,7 +23,7 @@ import pe.joedayz.api.exceptions.InvalidInputException;
 import pe.joedayz.api.exceptions.NotFoundException;
 import pe.joedayz.microservices.composite.product.services.ProductCompositeIntegration;
 
-@SpringBootTest(webEnvironment = RANDOM_PORT)
+@SpringBootTest(webEnvironment = RANDOM_PORT, properties = {"eureka.client.enabled=false"})
 class ProductCompositeServiceApplicationTests {
 
   private static final int PRODUCT_ID_OK = 1;
@@ -32,7 +33,7 @@ class ProductCompositeServiceApplicationTests {
   @Autowired
   private WebTestClient client;
 
-  @MockBean
+  @MockitoBean
   private ProductCompositeIntegration compositeIntegration;
 
   @BeforeEach

@@ -22,7 +22,8 @@ import pe.joedayz.microservices.core.review.persistence.ReviewRepository;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT, properties = {
     "spring.cloud.stream.defaultBinder=rabbit",
-    "logging.level.pe.joedayz=DEBUG"})
+    "logging.level.pe.joedayz=DEBUG",
+    "eureka.client.enabled=false"})
 class ReviewServiceApplicationTests extends MySqlTestBase {
 
   @Autowired
@@ -34,11 +35,6 @@ class ReviewServiceApplicationTests extends MySqlTestBase {
   @Autowired
   @Qualifier("messageProcessor")
   private Consumer<Event<Integer, Review>> messageProcessor;
-
-  //No qualifying bean of type 'java.util.function.Consumer<pe.joedayz.api.event.Event<java.lang.Integer,
-  // pe.joedayz.api.core.review.Review>>' available: expected at least 1 bean which qualifies as
-  // autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)
-  // , @org.springframework.beans.factory.annotation.Qualifier("messageProcessor")}
 
   @BeforeEach
   void setupDb() {

@@ -5,8 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac42f98c-20f4-47dd-bcf5-9a1fffa2e868" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/spring-cloud/eureka-server/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-em-all.bash" beforeDir="false" afterPath="$PROJECT_DIR$/test-em-all.bash" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-kafka.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-kafka.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-partitions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-partitions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/services/ProductCompositeIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/services/ProductCompositeIntegration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/MessagingTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/MessagingTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/ProductServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/ProductServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/RecommendationServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/RecommendationServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/util/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +88,9 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -77,6 +102,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.Build spring-init.executor": "Run",
+    "Gradle.EurekaServerApplicationTests.executor": "Run",
     "Gradle.IsSameEventTests.testEventObjectCompare.executor": "Run",
     "Gradle.MapperTests.executor": "Run",
     "Gradle.MapperTests.mapperListTests (1).executor": "Run",
@@ -103,7 +129,7 @@
     "Gradle.ReactiveTests.testFlux.executor": "Run",
     "Gradle.RecommendationServiceApplicationTests.deleteRecommendations.executor": "Run",
     "Gradle.RecommendationServiceApplicationTests.duplicateError.executor": "Run",
-    "Gradle.RecommendationServiceApplicationTests.executor": "Debug",
+    "Gradle.RecommendationServiceApplicationTests.executor": "Run",
     "Gradle.RecommendationServiceApplicationTests.getRecommendationsByProductId.executor": "Run",
     "Gradle.RecommendationServiceApplicationTests.getRecommendationsInvalidParameter.executor": "Run",
     "Gradle.RecommendationServiceApplicationTests.getRecommendationsInvalidParameterNegativeValue.executor": "Run",
@@ -111,7 +137,7 @@
     "Gradle.RecommendationServiceApplicationTests.getRecommendationsNotFound.executor": "Run",
     "Gradle.ReviewServiceApplicationTests.deleteReviews.executor": "Run",
     "Gradle.ReviewServiceApplicationTests.duplicateError.executor": "Run",
-    "Gradle.ReviewServiceApplicationTests.executor": "Debug",
+    "Gradle.ReviewServiceApplicationTests.executor": "Run",
     "Gradle.ReviewServiceApplicationTests.getReviewsByProductId.executor": "Debug",
     "Gradle.ReviewServiceApplicationTests.getReviewsInvalidParameter.executor": "Run",
     "Gradle.ReviewServiceApplicationTests.getReviewsInvalidParameterNegativeValue.executor": "Run",
@@ -157,7 +183,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ReviewServiceApplicationTests.getReviewsByProductId">
+  <component name="RunManager" selected="Gradle.ProductCompositeServiceApplicationTests">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -188,7 +214,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MapperTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="EurekaServerApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -199,9 +225,9 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":microservices:review-service:test" />
+            <option value=":spring-cloud:eureka-server:test" />
             <option value="--tests" />
-            <option value="&quot;pe.joedayz.microservices.core.review.MapperTests&quot;" />
+            <option value="&quot;pe.joedayz.eureka_server.EurekaServerApplicationTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -212,7 +238,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="PersistenceTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProductCompositeServiceApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -223,9 +249,33 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":microservices:review-service:test" />
+            <option value=":microservices:product-composite-service:test" />
             <option value="--tests" />
-            <option value="&quot;pe.joedayz.microservices.core.review.PersistenceTests&quot;" />
+            <option value="&quot;pe.joedayz.microservices.composite.product.ProductCompositeServiceApplicationTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ProductServiceApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":microservices:product-service:test" />
+            <option value="--tests" />
+            <option value="&quot;pe.joedayz.microservices.core.product.ProductServiceApplicationTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -284,30 +334,6 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ReviewServiceApplicationTests.getReviewsByProductId" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":microservices:review-service:test" />
-            <option value="--tests" />
-            <option value="&quot;pe.joedayz.microservices.core.review.ReviewServiceApplicationTests.getReviewsByProductId&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="spring-init" />
       <method v="2">
@@ -340,6 +366,13 @@
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
       <method v="2" />
+    </configuration>
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="spring-init.spring-cloud.eureka-server.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pe.joedayz.eureka_server.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="ProductCompositeServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="spring-init.microservices.product-composite-service.main" />
@@ -413,11 +446,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ReviewServiceApplicationTests.getReviewsByProductId" />
+        <item itemvalue="Gradle.ProductCompositeServiceApplicationTests" />
+        <item itemvalue="Gradle.ProductServiceApplicationTests" />
         <item itemvalue="Gradle.RecommendationServiceApplicationTests" />
         <item itemvalue="Gradle.ReviewServiceApplicationTests" />
-        <item itemvalue="Gradle.PersistenceTests" />
-        <item itemvalue="Gradle.MapperTests" />
+        <item itemvalue="Gradle.EurekaServerApplicationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -456,7 +489,9 @@
       <workItem from="1741048386043" duration="5718000" />
       <workItem from="1741653802665" duration="4935000" />
       <workItem from="1741659621557" duration="536000" />
-      <workItem from="1741825976498" duration="4754000" />
+      <workItem from="1741825976498" duration="6192000" />
+      <workItem from="1742256675349" duration="595000" />
+      <workItem from="1742257312040" duration="3550000" />
     </task>
     <servers />
   </component>
@@ -492,7 +527,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java</url>
-          <line>50</line>
+          <line>46</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -502,7 +537,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java</url>
-          <line>152</line>
+          <line>148</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>

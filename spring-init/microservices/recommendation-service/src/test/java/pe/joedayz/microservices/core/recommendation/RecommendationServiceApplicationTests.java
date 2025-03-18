@@ -20,7 +20,7 @@ import pe.joedayz.api.event.Event;
 import pe.joedayz.api.exceptions.InvalidInputException;
 import pe.joedayz.microservices.core.recommendation.persistence.RecommendationRepository;
 
-@SpringBootTest(webEnvironment = RANDOM_PORT)
+@SpringBootTest(webEnvironment = RANDOM_PORT, properties = {"eureka.client.enabled=false"})
 class RecommendationServiceApplicationTests extends MongoDbTestBase {
 
 	@Autowired
@@ -146,6 +146,4 @@ class RecommendationServiceApplicationTests extends MongoDbTestBase {
 		Event<Integer, Recommendation> event = new Event(DELETE, productId, null);
 		messageProcessor.accept(event);
 	}
-
-
 }
