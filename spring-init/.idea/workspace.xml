@@ -5,30 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac42f98c-20f4-47dd-bcf5-9a1fffa2e868" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/spring-cloud/eureka-server/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud/gateway/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud/gateway/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud/gateway/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud/gateway/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud/gateway/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud/gateway/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud/gateway/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud/gateway/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud/gateway/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud/gateway/src/main/java/pe/joedayz/gateway/GatewayApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud/gateway/src/main/java/pe/joedayz/gateway/HealthCheckConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud/gateway/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-cloud/gateway/src/test/java/pe/joedayz/gateway/GatewayApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose-kafka.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-kafka.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose-partitions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-partitions.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/HealthCheckConfiguration.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/services/ProductCompositeIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/pe/joedayz/microservices/composite/product/services/ProductCompositeIntegration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/MessagingTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/MessagingTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/ProductServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/ProductServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/RecommendationServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/RecommendationServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/review-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/util/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-em-all.bash" beforeDir="false" afterPath="$PROJECT_DIR$/test-em-all.bash" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +148,7 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "/Users/josediaz/Projects/joedayz/microservicios2025/Microservices2025/spring-init/api/src/main/java/pe/joedayz/microservices/api",
-    "last_opened_file_path": "/Users/josediaz/Projects/joedayz/microservicios2025/Microservices2025/spring-init",
+    "last_opened_file_path": "/Users/josediaz/Projects/joedayz/microservicios2025/Microservices2025/spring-init/spring-cloud",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -166,11 +164,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spring-cloud" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/microservices/product-service/src/test/resources" />
       <recent name="$PROJECT_DIR$/microservices/recommendation-service/src/test/resources" />
       <recent name="$PROJECT_DIR$/microservices/product-composite-service" />
-      <recent name="$PROJECT_DIR$/microservices/product-service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -374,6 +372,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="spring-init.spring-cloud.gateway.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pe.joedayz.gateway.GatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProductCompositeServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="spring-init.microservices.product-composite-service.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pe.joedayz.microservices.composite.product.ProductCompositeServiceApplication" />
@@ -491,7 +496,7 @@
       <workItem from="1741659621557" duration="536000" />
       <workItem from="1741825976498" duration="6192000" />
       <workItem from="1742256675349" duration="595000" />
-      <workItem from="1742257312040" duration="3550000" />
+      <workItem from="1742257312040" duration="5627000" />
     </task>
     <servers />
   </component>
