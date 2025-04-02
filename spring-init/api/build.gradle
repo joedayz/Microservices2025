@@ -5,12 +5,7 @@ plugins {
 
 group = 'pe.joedayz.microservices.api'
 version = '1.0.0-SNAPSHOT'
-
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(21)
-	}
-}
+sourceCompatibility = '21'
 
 repositories {
 	mavenCentral()
@@ -22,9 +17,9 @@ ext{
 
 dependencies {
 	implementation platform("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
-	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-	implementation 'org.springdoc:springdoc-openapi-starter-common:2.8.3'
 
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springdoc:springdoc-openapi-starter-common:2.3.0'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

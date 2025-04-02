@@ -11,8 +11,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.actuate.health.Health;
 import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.http.HttpStatus;
 import org.springframework.messaging.Message;
@@ -43,21 +41,21 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
   private static final String RECOMMENDATION_SERVICE_URL = "http://recommendation";
   private static final String REVIEW_SERVICE_URL = "http://review";
 
+  private final Scheduler publishEventScheduler;
   private final WebClient webClient;
   private final ObjectMapper mapper;
   private final StreamBridge streamBridge;
-  private final Scheduler publishEventScheduler;
 
   @Autowired
   public ProductCompositeIntegration(
       @Qualifier("publishEventScheduler") Scheduler publishEventScheduler,
-      WebClient.Builder webClient,
+    WebClient.Builder webClientBuilder,
       ObjectMapper mapper,
       StreamBridge streamBridge
   ) {
+    this.webClient = webClientBuilder.build();
 
     this.publishEventScheduler = publishEventScheduler;
-    this.webClient = webClient.build();
     this.mapper = mapper;
     this.streamBridge = streamBridge;
   }

@@ -1,4 +1,4 @@
-package pe.joedayz.eureka_server;
+package pe.joedayz.springcloud.eurekaserver;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,9 +10,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
-/**
- * @author josediaz
- **/
 @Configuration
 public class SecurityConfig {
 
@@ -21,8 +18,8 @@ public class SecurityConfig {
 
   @Autowired
   public SecurityConfig(
-      @Value("${app.eureka-username}") String username,
-      @Value("${app.eureka-password}") String password
+    @Value("${app.eureka-username}") String username,
+    @Value("${app.eureka-password}") String password
   ) {
     this.username = username;
     this.password = password;
@@ -39,13 +36,15 @@ public class SecurityConfig {
   }
 
   @Bean
-  public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-    return http
-        .csrf(csrf -> csrf.disable()) // Deshabilitar CSRF
-        .authorizeHttpRequests(auth -> auth
-            .anyRequest().authenticated()
-        )
-        .httpBasic(httpBasic -> {}) // Corregido: lambda debe devolver void
-        .build();
+  public SecurityFilterChain configure(HttpSecurity http) throws Exception {
+    http
+      // Disable CRCF to allow services to register themselves with Eureka
+      .csrf()
+        .disable()
+      .authorizeRequests()
+        .anyRequest().authenticated()
+        .and()
+        .httpBasic();
+    return http.build();
   }
 }
