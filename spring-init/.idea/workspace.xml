@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac42f98c-20f4-47dd-bcf5-9a1fffa2e868" name="Changes" comment="" />
+    <list default="true" id="ac42f98c-20f4-47dd-bcf5-9a1fffa2e868" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/gateway.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -382,6 +385,13 @@
       <module name="spring-init" />
       <option name="filePath" />
       <method v="2" />
+    </configuration>
+    <configuration name="ConfigServerApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="spring-init.spring-cloud.config-server.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pe.joedayz.springcloud.configserver.ConfigServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="spring-init.spring-cloud.config-server.main" />
