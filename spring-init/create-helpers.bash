@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 spring init \
---boot-version=3.4.1 \
+--boot-version=3.4.4 \
 --type=gradle-project \
 --java-version=21 \
 --packaging=jar \
@@ -13,7 +13,7 @@ spring init \
 api
 
 spring init \
---boot-version=3.4.1 \
+--boot-version=3.4.4 \
 --type=gradle-project \
 --java-version=21 \
 --packaging=jar \

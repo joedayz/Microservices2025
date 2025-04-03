@@ -22,7 +22,7 @@ import pe.joedayz.microservices.core.review.persistence.ReviewRepository;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT, properties = {
         "spring.cloud.stream.defaultBinder=rabbit",
-        "logging.level.se.magnus=DEBUG",
+  "logging.level.pe.joedayz=DEBUG",
         "eureka.client.enabled=false",
         "spring.jpa.hibernate.ddl-auto=update",
         "spring.cloud.config.enabled=false"})

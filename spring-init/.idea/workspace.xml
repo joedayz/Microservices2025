@@ -5,8 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac42f98c-20f4-47dd-bcf5-9a1fffa2e868" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/microservices/product-service/spring-init.microservices.product-service.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/microservices/product-service/spring-init.microservices.product-service.test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/microservices/recommendation-service/spring-init.microservices.recommendation-service.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/microservices/recommendation-service/spring-init.microservices.recommendation-service.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-repo/gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/gateway.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create-helpers.bash" beforeDir="false" afterPath="$PROJECT_DIR$/create-helpers.bash" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create-projects.bash" beforeDir="false" afterPath="$PROJECT_DIR$/create-projects.bash" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/authorization-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud/authorization-server/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/config-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud/config-server/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/eureka-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud/eureka-server/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/gateway/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud/gateway/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/util/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,74 +97,76 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build spring-init.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.EurekaServerApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.IsSameEventTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.IsSameEventTests.testEventObjectCompare.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MapperTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MapperTests.mapperListTests (1).executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MapperTests.mapperListTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MapperTests.mapperTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MapperTests.mapperTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MessagingTests.createCompositeProduct1.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MessagingTests.createCompositeProduct2.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MessagingTests.deleteCompositeProduct.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MessagingTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.OAuth2AuthorizationServerApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.PersistenceTests (1).executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.PersistenceTests.create (1).executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.PersistenceTests.create.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.PersistenceTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.PersistenceTests.paging.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ProductCompositeServiceApplicationTests.createCompositeProduct1.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ProductCompositeServiceApplicationTests.createCompositeProduct2.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ProductCompositeServiceApplicationTests.deleteCompositeProduct.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ProductCompositeServiceApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ProductCompositeServiceApplicationTests.getProductById.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ProductCompositeServiceApplicationTests.getProductInvalidInput.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ProductCompositeServiceApplicationTests.getProductNotFound.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ProductServiceApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ProductServiceApplicationTests.getProductById.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReactiveTests.testFlux.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RecommendationServiceApplicationTests.deleteRecommendations.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RecommendationServiceApplicationTests.duplicateError.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RecommendationServiceApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RecommendationServiceApplicationTests.getRecommendationsByProductId.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RecommendationServiceApplicationTests.getRecommendationsInvalidParameter.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RecommendationServiceApplicationTests.getRecommendationsInvalidParameterNegativeValue.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RecommendationServiceApplicationTests.getRecommendationsMissingParameter.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RecommendationServiceApplicationTests.getRecommendationsNotFound.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReviewServiceApplicationTests.deleteReviews.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReviewServiceApplicationTests.duplicateError.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReviewServiceApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReviewServiceApplicationTests.getReviewsByProductId.executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.ReviewServiceApplicationTests.getReviewsInvalidParameter.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReviewServiceApplicationTests.getReviewsInvalidParameterNegativeValue.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReviewServiceApplicationTests.getReviewsMissingParameter.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ReviewServiceApplicationTests.getReviewsNotFound.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductCompositeServiceApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/josediaz/Projects/joedayz/microservicios2025/Microservices2025/spring-init/api/src/main/java/pe/joedayz/microservices/api&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/amadeo/Projects/Microservices2025/spring-init&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build spring-init.executor": "Run",
+    "Gradle.EurekaServerApplicationTests.executor": "Run",
+    "Gradle.IsSameEventTests.executor": "Run",
+    "Gradle.IsSameEventTests.testEventObjectCompare.executor": "Run",
+    "Gradle.MapperTests.executor": "Run",
+    "Gradle.MapperTests.mapperListTests (1).executor": "Run",
+    "Gradle.MapperTests.mapperListTests.executor": "Run",
+    "Gradle.MapperTests.mapperTest.executor": "Run",
+    "Gradle.MapperTests.mapperTests.executor": "Run",
+    "Gradle.MessagingTests.createCompositeProduct1.executor": "Run",
+    "Gradle.MessagingTests.createCompositeProduct2.executor": "Run",
+    "Gradle.MessagingTests.deleteCompositeProduct.executor": "Run",
+    "Gradle.MessagingTests.executor": "Run",
+    "Gradle.OAuth2AuthorizationServerApplicationTests (1).executor": "Run",
+    "Gradle.OAuth2AuthorizationServerApplicationTests.executor": "Run",
+    "Gradle.PersistenceTests (1).executor": "Run",
+    "Gradle.PersistenceTests.create (1).executor": "Run",
+    "Gradle.PersistenceTests.create.executor": "Run",
+    "Gradle.PersistenceTests.executor": "Run",
+    "Gradle.PersistenceTests.paging.executor": "Run",
+    "Gradle.ProductCompositeServiceApplicationTests.createCompositeProduct1.executor": "Run",
+    "Gradle.ProductCompositeServiceApplicationTests.createCompositeProduct2.executor": "Run",
+    "Gradle.ProductCompositeServiceApplicationTests.deleteCompositeProduct.executor": "Run",
+    "Gradle.ProductCompositeServiceApplicationTests.executor": "Run",
+    "Gradle.ProductCompositeServiceApplicationTests.getProductById.executor": "Run",
+    "Gradle.ProductCompositeServiceApplicationTests.getProductInvalidInput.executor": "Run",
+    "Gradle.ProductCompositeServiceApplicationTests.getProductNotFound.executor": "Run",
+    "Gradle.ProductServiceApplicationTests.executor": "Run",
+    "Gradle.ProductServiceApplicationTests.getProductById.executor": "Run",
+    "Gradle.ReactiveTests.testFlux.executor": "Run",
+    "Gradle.RecommendationServiceApplicationTests.deleteRecommendations.executor": "Run",
+    "Gradle.RecommendationServiceApplicationTests.duplicateError.executor": "Run",
+    "Gradle.RecommendationServiceApplicationTests.executor": "Run",
+    "Gradle.RecommendationServiceApplicationTests.getRecommendationsByProductId.executor": "Run",
+    "Gradle.RecommendationServiceApplicationTests.getRecommendationsInvalidParameter.executor": "Run",
+    "Gradle.RecommendationServiceApplicationTests.getRecommendationsInvalidParameterNegativeValue.executor": "Run",
+    "Gradle.RecommendationServiceApplicationTests.getRecommendationsMissingParameter.executor": "Run",
+    "Gradle.RecommendationServiceApplicationTests.getRecommendationsNotFound.executor": "Run",
+    "Gradle.ReviewServiceApplicationTests.deleteReviews.executor": "Run",
+    "Gradle.ReviewServiceApplicationTests.duplicateError.executor": "Run",
+    "Gradle.ReviewServiceApplicationTests.executor": "Run",
+    "Gradle.ReviewServiceApplicationTests.getReviewsByProductId.executor": "Debug",
+    "Gradle.ReviewServiceApplicationTests.getReviewsInvalidParameter.executor": "Run",
+    "Gradle.ReviewServiceApplicationTests.getReviewsInvalidParameterNegativeValue.executor": "Run",
+    "Gradle.ReviewServiceApplicationTests.getReviewsMissingParameter.executor": "Run",
+    "Gradle.ReviewServiceApplicationTests.getReviewsNotFound.executor": "Run",
+    "Gradle.spring-init:spring-cloud:config-server [:spring-cloud:config-server:pe.joedayz.springcloud.configserver.ConfigServerApplication.main()].executor": "Run",
+    "JUnit.ProductCompositeServiceApplicationTests.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "/Users/josediaz/Projects/joedayz/microservicios2025/Microservices2025/spring-init/api/src/main/java/pe/joedayz/microservices/api",
+    "last_opened_file_path": "/Users/amadeo/Projects/Microservices2025/spring-init",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/spring-cloud" />
@@ -167,7 +186,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.OAuth2AuthorizationServerApplicationTests">
+  <component name="RunManager" selected="Application.ConfigServerApplication">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -255,6 +274,19 @@
       <option name="studyTest" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="ConfigServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pe.joedayz.springcloud.configserver.ConfigServerApplication" />
+      <module name="spring-init.spring-cloud.config-server.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pe.joedayz.springcloud.configserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EurekaServerApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -279,7 +311,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MapperTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="OAuth2AuthorizationServerApplicationTests (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -290,9 +322,9 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":microservices:review-service:test" />
+            <option value=":spring-cloud:authorization-server:test" />
             <option value="--tests" />
-            <option value="&quot;pe.joedayz.microservices.core.review.MapperTests&quot;" />
+            <option value="&quot;sample.OAuth2AuthorizationServerApplicationTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -341,30 +373,6 @@
             <option value=":microservices:review-service:test" />
             <option value="--tests" />
             <option value="&quot;pe.joedayz.microservices.core.review.PersistenceTests&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="ProductCompositeServiceApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":microservices:product-composite-service:test" />
-            <option value="--tests" />
-            <option value="&quot;pe.joedayz.microservices.composite.product.ProductCompositeServiceApplicationTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -479,11 +487,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ConfigServerApplication" />
+        <item itemvalue="Gradle.OAuth2AuthorizationServerApplicationTests (1)" />
         <item itemvalue="Gradle.OAuth2AuthorizationServerApplicationTests" />
         <item itemvalue="Gradle.EurekaServerApplicationTests" />
         <item itemvalue="Gradle.PersistenceTests" />
-        <item itemvalue="Gradle.MapperTests" />
-        <item itemvalue="Gradle.ProductCompositeServiceApplicationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -533,6 +541,7 @@
       <workItem from="1743628055361" duration="3916000" />
       <workItem from="1743636087635" duration="10273000" />
       <workItem from="1743654048742" duration="48000" />
+      <workItem from="1743659462796" duration="3903000" />
     </task>
     <servers />
   </component>
