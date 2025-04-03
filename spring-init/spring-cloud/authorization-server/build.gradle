@@ -4,7 +4,8 @@ plugins {
     id 'java'
 }
 
-group = 'pe.joedayz.springcloud'
+
+group = 'se.magnus.springcloud'
 version = '1.0.0-SNAPSHOT'
 sourceCompatibility = '21'
 
@@ -21,11 +22,13 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    implementation 'org.springframework.cloud:spring-cloud-starter-config'
+    implementation 'org.springframework.cloud:spring-cloud-config-client:4.2.1'
+    implementation 'org.springframework.retry:spring-retry'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
-    testImplementation 'net.sourceforge.htmlunit:htmlunit:2.70.0'
-
+    testImplementation 'org.htmlunit:htmlunit:4.11.1'
 }
 
 dependencyManagement {

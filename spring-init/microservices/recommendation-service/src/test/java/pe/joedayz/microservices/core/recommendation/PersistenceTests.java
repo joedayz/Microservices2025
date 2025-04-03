@@ -14,7 +14,7 @@ import org.springframework.dao.OptimisticLockingFailureException;
 import pe.joedayz.microservices.core.recommendation.persistence.RecommendationEntity;
 import pe.joedayz.microservices.core.recommendation.persistence.RecommendationRepository;
 
-@DataMongoTest
+@DataMongoTest(properties = {"spring.cloud.config.enabled=false"})
 class PersistenceTests extends MongoDbTestBase {
 
   @Autowired

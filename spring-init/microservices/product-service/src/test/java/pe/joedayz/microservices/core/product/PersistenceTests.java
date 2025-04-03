@@ -10,7 +10,7 @@ import reactor.test.StepVerifier;
 import pe.joedayz.microservices.core.product.persistence.ProductEntity;
 import pe.joedayz.microservices.core.product.persistence.ProductRepository;
 
-@DataMongoTest
+@DataMongoTest(properties = {"spring.cloud.config.enabled=false"})
 class PersistenceTests extends MongoDbTestBase {
 
   @Autowired

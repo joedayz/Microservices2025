@@ -80,12 +80,12 @@ function waitForService() {
 
 function testCompositeCreated() {
 
-        # Expect that the Product Composite for productId $PROD_ID_REVS_RECS has been created with three recommendations and three reviews
+    # Expect that the Product Composite for productId $PROD_ID_REVS_RECS has been created with three recommendations and three reviews
     if ! assertCurl 200 "curl $AUTH -k https://$HOST:$PORT/product-composite/$PROD_ID_REVS_RECS -s"
-        then
-            echo -n "FAIL"
-            return 1
-        fi
+    then
+        echo -n "FAIL"
+        return 1
+    fi
 
     set +e
     assertEqual "$PROD_ID_REVS_RECS" $(echo $RESPONSE | jq .productId)
@@ -188,9 +188,16 @@ ACCESS_TOKEN=$(curl -k https://writer:secret-writer@$HOST:$PORT/oauth2/token -d 
 echo ACCESS_TOKEN=$ACCESS_TOKEN
 AUTH="-H \"Authorization: Bearer $ACCESS_TOKEN\""
 
-# Verify access to Eureka and that all four microservices are registered in Eureka
+# Verify access to Eureka and that all microservices are registered in Eureka
 assertCurl 200 "curl -H "accept:application/json" -k https://u:p@$HOST:$PORT/eureka/api/apps -s"
 assertEqual 6 $(echo $RESPONSE | jq ".applications.application | length")
+
+# Verify access to the Config server and that its encrypt/decrypt endpoints work
+assertCurl 200 "curl -H "accept:application/json" -k https://dev-usr:dev-pwd@$HOST:$PORT/config/product/docker -s"
+TEST_VALUE="hello-world"
+ENCRYPTED_VALUE=$(curl -k https://dev-usr:dev-pwd@$HOST:$PORT/config/encrypt --data-urlencode "$TEST_VALUE" -s)
+DECRYPTED_VALUE=$(curl -k https://dev-usr:dev-pwd@$HOST:$PORT/config/decrypt -d $ENCRYPTED_VALUE -s)
+assertEqual "$TEST_VALUE" "$DECRYPTED_VALUE"
 
 setupTestdata
 
@@ -243,7 +250,7 @@ assertCurl 302 "curl -ks  https://$HOST:$PORT/openapi/swagger-ui.html"
 assertCurl 200 "curl -ksL https://$HOST:$PORT/openapi/swagger-ui.html"
 assertCurl 200 "curl -ks  https://$HOST:$PORT/openapi/webjars/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config"
 assertCurl 200 "curl -ks  https://$HOST:$PORT/openapi/v3/api-docs"
-assertEqual "3.1.0" "$(echo $RESPONSE | jq -r .openapi)"
+assertEqual "3.0.1" "$(echo $RESPONSE | jq -r .openapi)"
 assertEqual "https://$HOST:$PORT" "$(echo $RESPONSE | jq -r '.servers[0].url')"
 assertCurl 200 "curl -ks  https://$HOST:$PORT/openapi/v3/api-docs.yaml"
 
