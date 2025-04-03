@@ -12,56 +12,63 @@ server.ssl.bundle: gateway
 
 spring.cloud.gateway.routes:
 
-  - id: product-composite
+- id: product-composite
     uri: lb://product-composite
     predicates:
       - Path=/product-composite/**
 
-  - id: oauth2-server
+- id: oauth2-server
     uri: lb://auth-server
     predicates:
       - Path=/oauth2/**
 
-  - id: oauth2-login
+- id: oauth2-login
     uri: lb://auth-server
     predicates:
       - Path=/login/**
 
-  - id: oauth2-error
+- id: oauth2-error
     uri: lb://auth-server
     predicates:
       - Path=/error/**
 
-  - id: product-composite-swagger-ui
+- id: product-composite-swagger-ui
     uri: lb://product-composite
     predicates:
       - Path=/openapi/**
 
-  - id: product-composite-swagger-ui-webjars
+- id: product-composite-swagger-ui-webjars
     uri: lb://product-composite
     predicates:
       - Path=/webjars/**
 
-  - id: eureka-api
+- id: eureka-api
     uri: http://${app.eureka-server}:8761
     predicates:
       - Path=/eureka/api/{segment}
     filters:
       - SetPath=/eureka/{segment}
 
-  - id: eureka-web-start
+- id: eureka-web-start
     uri: http://${app.eureka-server}:8761
     predicates:
       - Path=/eureka/web
     filters:
       - SetPath=/
 
-  - id: eureka-web-other
+- id: eureka-web-other
     uri: http://${app.eureka-server}:8761
     predicates:
       - Path=/eureka/**
 
-  - id: host_route_200
+- id: config-server
+  uri: ${spring.cloud.config.uri}
+  predicates:
+  - Path=/config/**
+  filters:
+  - RewritePath=/config/(?<segment>.*), /$\{segment}
+
+- id: host_route_200
     uri: http://httpstat.us
     predicates:
       - Host=i.feel.lucky:8080
@@ -69,7 +76,7 @@ spring.cloud.gateway.routes:
     filters:
       - SetPath=/200
 
-  - id: host_route_418
+- id: host_route_418
     uri: http://httpstat.us
     predicates:
       - Host=im.a.teapot:8080
@@ -77,7 +84,7 @@ spring.cloud.gateway.routes:
     filters:
       - SetPath=/418
 
-  - id: host_route_501
+- id: host_route_501
     uri: http://httpstat.us
     predicates:
       - Path=/headerrouting/**
@@ -88,12 +95,10 @@ spring.security.oauth2.resourceserver.jwt.issuer-uri: http://${app.auth-server}:
 
 management.endpoint.gateway.enabled: true
 
-
 logging:
   level:
     root: INFO
     org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator: INFO
     org.springframework.cloud.gateway: TRACE
     org.springframework.web.server.adapter.HttpWebHandlerAdapter: TRACE
-
 

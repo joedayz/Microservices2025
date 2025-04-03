@@ -1,4 +1,4 @@
-package se.magnus.springcloud.configserver;
+package pe.joedayz.springcloud.configserver;
 
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 

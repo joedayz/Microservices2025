@@ -4,7 +4,7 @@ plugins {
     id 'java'
 }
 
-group = 'se.magnus.springcloud'
+group = 'pe.joedayz.springcloud'
 version = '1.0.0-SNAPSHOT'
 sourceCompatibility = '21'
 

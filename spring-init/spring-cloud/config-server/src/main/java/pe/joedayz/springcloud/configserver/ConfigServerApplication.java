@@ -1,4 +1,4 @@
-package se.magnus.springcloud.configserver;
+package pe.joedayz.springcloud.configserver;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

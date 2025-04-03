@@ -4,62 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac42f98c-20f4-47dd-bcf5-9a1fffa2e868" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-repo/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-repo/auth-server.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-repo/eureka-server.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-repo/gateway.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-repo/product-composite.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-repo/product.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-repo/recommendation.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-repo/review.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/product-service/src/test/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/test/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/review-service/src/test/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-cloud/authorization-server/src/test/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-cloud/eureka-server/src/test/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-cloud/gateway/src/test/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/microservices/product-service/spring-init.microservices.product-service.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/microservices/product-service/spring-init.microservices.product-service.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/microservices/product-service/spring-init.microservices.product-service.test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/microservices/recommendation-service/spring-init.microservices.recommendation-service.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/microservices/recommendation-service/spring-init.microservices.recommendation-service.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/microservices/recommendation-service/spring-init.microservices.recommendation-service.test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/microservices/review-service/spring-init.microservices.review-service.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/microservices/review-service/spring-init.microservices.review-service.test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose-kafka.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-kafka.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose-partitions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-partitions.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/MessagingTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/MessagingTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/test/java/pe/joedayz/microservices/composite/product/ProductCompositeServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/PersistenceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/PersistenceTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/ProductServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/src/test/java/pe/joedayz/microservices/core/product/ProductServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/PersistenceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/PersistenceTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/RecommendationServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/RecommendationServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/review-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/PersistenceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/PersistenceTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud/authorization-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud/authorization-server/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud/authorization-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud/authorization-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud/eureka-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud/eureka-server/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud/eureka-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud/eureka-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud/eureka-server/src/test/java/pe/joedayz/springcloud/eurekaserver/EurekaServerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud/eureka-server/src/test/java/pe/joedayz/springcloud/eurekaserver/EurekaServerApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud/gateway/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud/gateway/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud/gateway/src/main/java/pe/joedayz/springcloud/gateway/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud/gateway/src/main/java/pe/joedayz/springcloud/gateway/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud/gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud/gateway/src/test/java/pe/joedayz/springcloud/gateway/GatewayApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud/gateway/src/test/java/pe/joedayz/springcloud/gateway/GatewayApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-em-all.bash" beforeDir="false" afterPath="$PROJECT_DIR$/test-em-all.bash" afterDir="false" />
-    </list>
+    <list default="true" id="ac42f98c-20f4-47dd-bcf5-9a1fffa2e868" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -132,74 +77,74 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build spring-init.executor": "Run",
-    "Gradle.EurekaServerApplicationTests.executor": "Run",
-    "Gradle.IsSameEventTests.executor": "Run",
-    "Gradle.IsSameEventTests.testEventObjectCompare.executor": "Run",
-    "Gradle.MapperTests.executor": "Run",
-    "Gradle.MapperTests.mapperListTests (1).executor": "Run",
-    "Gradle.MapperTests.mapperListTests.executor": "Run",
-    "Gradle.MapperTests.mapperTest.executor": "Run",
-    "Gradle.MapperTests.mapperTests.executor": "Run",
-    "Gradle.MessagingTests.createCompositeProduct1.executor": "Run",
-    "Gradle.MessagingTests.createCompositeProduct2.executor": "Run",
-    "Gradle.MessagingTests.deleteCompositeProduct.executor": "Run",
-    "Gradle.MessagingTests.executor": "Run",
-    "Gradle.OAuth2AuthorizationServerApplicationTests.executor": "Run",
-    "Gradle.PersistenceTests (1).executor": "Run",
-    "Gradle.PersistenceTests.create (1).executor": "Run",
-    "Gradle.PersistenceTests.create.executor": "Run",
-    "Gradle.PersistenceTests.executor": "Run",
-    "Gradle.PersistenceTests.paging.executor": "Run",
-    "Gradle.ProductCompositeServiceApplicationTests.createCompositeProduct1.executor": "Run",
-    "Gradle.ProductCompositeServiceApplicationTests.createCompositeProduct2.executor": "Run",
-    "Gradle.ProductCompositeServiceApplicationTests.deleteCompositeProduct.executor": "Run",
-    "Gradle.ProductCompositeServiceApplicationTests.executor": "Run",
-    "Gradle.ProductCompositeServiceApplicationTests.getProductById.executor": "Run",
-    "Gradle.ProductCompositeServiceApplicationTests.getProductInvalidInput.executor": "Run",
-    "Gradle.ProductCompositeServiceApplicationTests.getProductNotFound.executor": "Run",
-    "Gradle.ProductServiceApplicationTests.executor": "Run",
-    "Gradle.ProductServiceApplicationTests.getProductById.executor": "Run",
-    "Gradle.ReactiveTests.testFlux.executor": "Run",
-    "Gradle.RecommendationServiceApplicationTests.deleteRecommendations.executor": "Run",
-    "Gradle.RecommendationServiceApplicationTests.duplicateError.executor": "Run",
-    "Gradle.RecommendationServiceApplicationTests.executor": "Run",
-    "Gradle.RecommendationServiceApplicationTests.getRecommendationsByProductId.executor": "Run",
-    "Gradle.RecommendationServiceApplicationTests.getRecommendationsInvalidParameter.executor": "Run",
-    "Gradle.RecommendationServiceApplicationTests.getRecommendationsInvalidParameterNegativeValue.executor": "Run",
-    "Gradle.RecommendationServiceApplicationTests.getRecommendationsMissingParameter.executor": "Run",
-    "Gradle.RecommendationServiceApplicationTests.getRecommendationsNotFound.executor": "Run",
-    "Gradle.ReviewServiceApplicationTests.deleteReviews.executor": "Run",
-    "Gradle.ReviewServiceApplicationTests.duplicateError.executor": "Run",
-    "Gradle.ReviewServiceApplicationTests.executor": "Run",
-    "Gradle.ReviewServiceApplicationTests.getReviewsByProductId.executor": "Debug",
-    "Gradle.ReviewServiceApplicationTests.getReviewsInvalidParameter.executor": "Run",
-    "Gradle.ReviewServiceApplicationTests.getReviewsInvalidParameterNegativeValue.executor": "Run",
-    "Gradle.ReviewServiceApplicationTests.getReviewsMissingParameter.executor": "Run",
-    "Gradle.ReviewServiceApplicationTests.getReviewsNotFound.executor": "Run",
-    "JUnit.ProductCompositeServiceApplicationTests.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "/Users/josediaz/Projects/joedayz/microservicios2025/Microservices2025/spring-init/api/src/main/java/pe/joedayz/microservices/api",
-    "last_opened_file_path": "/Users/amadeo/Projects/Microservices2025/spring-init",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build spring-init.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.EurekaServerApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IsSameEventTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IsSameEventTests.testEventObjectCompare.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapperTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapperTests.mapperListTests (1).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapperTests.mapperListTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapperTests.mapperTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapperTests.mapperTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MessagingTests.createCompositeProduct1.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MessagingTests.createCompositeProduct2.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MessagingTests.deleteCompositeProduct.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MessagingTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OAuth2AuthorizationServerApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PersistenceTests (1).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PersistenceTests.create (1).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PersistenceTests.create.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PersistenceTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PersistenceTests.paging.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductCompositeServiceApplicationTests.createCompositeProduct1.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductCompositeServiceApplicationTests.createCompositeProduct2.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductCompositeServiceApplicationTests.deleteCompositeProduct.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductCompositeServiceApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductCompositeServiceApplicationTests.getProductById.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductCompositeServiceApplicationTests.getProductInvalidInput.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductCompositeServiceApplicationTests.getProductNotFound.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductServiceApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductServiceApplicationTests.getProductById.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReactiveTests.testFlux.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RecommendationServiceApplicationTests.deleteRecommendations.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RecommendationServiceApplicationTests.duplicateError.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RecommendationServiceApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RecommendationServiceApplicationTests.getRecommendationsByProductId.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RecommendationServiceApplicationTests.getRecommendationsInvalidParameter.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RecommendationServiceApplicationTests.getRecommendationsInvalidParameterNegativeValue.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RecommendationServiceApplicationTests.getRecommendationsMissingParameter.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RecommendationServiceApplicationTests.getRecommendationsNotFound.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReviewServiceApplicationTests.deleteReviews.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReviewServiceApplicationTests.duplicateError.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReviewServiceApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReviewServiceApplicationTests.getReviewsByProductId.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.ReviewServiceApplicationTests.getReviewsInvalidParameter.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReviewServiceApplicationTests.getReviewsInvalidParameterNegativeValue.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReviewServiceApplicationTests.getReviewsMissingParameter.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReviewServiceApplicationTests.getReviewsNotFound.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProductCompositeServiceApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/josediaz/Projects/joedayz/microservicios2025/Microservices2025/spring-init/api/src/main/java/pe/joedayz/microservices/api&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/amadeo/Projects/Microservices2025/spring-init&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/spring-cloud" />
@@ -577,6 +522,7 @@
       <workItem from="1743459983400" duration="11000" />
       <workItem from="1743628055361" duration="3916000" />
       <workItem from="1743636087635" duration="10273000" />
+      <workItem from="1743654048742" duration="48000" />
     </task>
     <servers />
   </component>
@@ -602,22 +548,22 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/RecommendationServiceApplicationTests.java</url>
-          <line>143</line>
+          <line>145</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java</url>
-          <line>48</line>
+          <line>50</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/microservices/recommendation-service/src/test/java/pe/joedayz/microservices/core/recommendation/RecommendationServiceApplicationTests.java</url>
-          <line>45</line>
+          <line>47</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/microservices/review-service/src/test/java/pe/joedayz/microservices/core/review/ReviewServiceApplicationTests.java</url>
-          <line>150</line>
+          <line>152</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

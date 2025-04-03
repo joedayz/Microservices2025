@@ -1,4 +1,4 @@
-package se.magnus.springcloud.configserver;
+package pe.joedayz.springcloud.configserver;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
