@@ -1,6 +1,6 @@
 plugins {
     id 'io.spring.dependency-management' version '1.1.4'
-	id 'java'
+    id 'java'
 }
 
 group = 'pe.joedayz.microservices.util'
@@ -8,7 +8,7 @@ version = '1.0.0-SNAPSHOT'
 sourceCompatibility = '21'
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 ext {
@@ -16,13 +16,13 @@ ext {
 }
 
 dependencies {
-	implementation platform("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
+    implementation platform("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
 
-	implementation project(':api')
-	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation project(':api')
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }

@@ -34,14 +34,12 @@ import pe.joedayz.api.core.review.Review;
 import pe.joedayz.api.event.Event;
 
 @SpringBootTest(
-        webEnvironment = RANDOM_PORT,
-        classes = {TestSecurityConfig.class},
-        properties = {
-                "spring.security.oauth2.resourceserver.jwt.issuer-uri=",
-                "spring.main.allow-bean-definition-overriding=true",
-                "eureka.client.enabled=false",
-                "spring.cloud.stream.defaultBinder=rabbit",
-                "spring.cloud.config.enabled=false"})
+  webEnvironment = RANDOM_PORT,
+  classes = {TestSecurityConfig.class},
+  properties = {
+    "spring.security.oauth2.resourceserver.jwt.issuer-uri=",
+    "spring.main.allow-bean-definition-overriding=true",
+    "spring.cloud.stream.defaultBinder=rabbit"})
 @Import({TestChannelBinderConfiguration.class})
 class MessagingTests {
 
@@ -74,7 +72,7 @@ class MessagingTests {
     assertEquals(1, productMessages.size());
 
     Event<Integer, Product> expectedEvent =
-        new Event(CREATE, composite.getProductId(), new Product(composite.getProductId(), composite.getName(), composite.getWeight(), null));
+      new Event(CREATE, composite.getProductId(), new Product(composite.getProductId(), composite.getName(), composite.getWeight(), null));
     assertThat(productMessages.get(0), is(sameEventExceptCreatedAt(expectedEvent)));
 
     // Assert no recommendation and review events
@@ -86,8 +84,8 @@ class MessagingTests {
   void createCompositeProduct2() {
 
     ProductAggregate composite = new ProductAggregate(1, "name", 1,
-        singletonList(new RecommendationSummary(1, "a", 1, "c")),
-        singletonList(new ReviewSummary(1, "a", "s", "c")), null);
+      singletonList(new RecommendationSummary(1, "a", 1, "c")),
+      singletonList(new ReviewSummary(1, "a", "s", "c")), null);
     postAndVerifyProduct(composite, ACCEPTED);
 
     final List<String> productMessages = getMessages("products");
@@ -98,7 +96,7 @@ class MessagingTests {
     assertEquals(1, productMessages.size());
 
     Event<Integer, Product> expectedProductEvent =
-        new Event(CREATE, composite.getProductId(), new Product(composite.getProductId(), composite.getName(), composite.getWeight(), null));
+      new Event(CREATE, composite.getProductId(), new Product(composite.getProductId(), composite.getName(), composite.getWeight(), null));
     assertThat(productMessages.get(0), is(sameEventExceptCreatedAt(expectedProductEvent)));
 
     // Assert one create recommendation event queued up
@@ -106,8 +104,8 @@ class MessagingTests {
 
     RecommendationSummary rec = composite.getRecommendations().get(0);
     Event<Integer, Product> expectedRecommendationEvent =
-        new Event(CREATE, composite.getProductId(),
-            new Recommendation(composite.getProductId(), rec.getRecommendationId(), rec.getAuthor(), rec.getRate(), rec.getContent(), null));
+      new Event(CREATE, composite.getProductId(),
+        new Recommendation(composite.getProductId(), rec.getRecommendationId(), rec.getAuthor(), rec.getRate(), rec.getContent(), null));
     assertThat(recommendationMessages.get(0), is(sameEventExceptCreatedAt(expectedRecommendationEvent)));
 
     // Assert one create review event queued up
@@ -115,7 +113,7 @@ class MessagingTests {
 
     ReviewSummary rev = composite.getReviews().get(0);
     Event<Integer, Product> expectedReviewEvent =
-        new Event(CREATE, composite.getProductId(), new Review(composite.getProductId(), rev.getReviewId(), rev.getAuthor(), rev.getSubject(), rev.getContent(), null));
+      new Event(CREATE, composite.getProductId(), new Review(composite.getProductId(), rev.getReviewId(), rev.getAuthor(), rev.getSubject(), rev.getContent(), null));
     assertThat(reviewMessages.get(0), is(sameEventExceptCreatedAt(expectedReviewEvent)));
   }
 

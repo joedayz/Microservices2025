@@ -73,9 +73,9 @@ public class ReviewServiceImpl implements ReviewService {
     LOG.info("Will get reviews for product with id={}", productId);
 
     return Mono.fromCallable(() -> internalGetReviews(productId))
-        .flatMapMany(Flux::fromIterable)
-        .log(LOG.getName(), FINE)
-        .subscribeOn(jdbcScheduler);
+      .flatMapMany(Flux::fromIterable)
+      .log(LOG.getName(), FINE)
+      .subscribeOn(jdbcScheduler);
   }
 
   private List<Review> internalGetReviews(int productId) {

@@ -21,11 +21,9 @@ import pe.joedayz.api.exceptions.InvalidInputException;
 import pe.joedayz.microservices.core.review.persistence.ReviewRepository;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT, properties = {
-        "spring.cloud.stream.defaultBinder=rabbit",
+  "spring.cloud.stream.defaultBinder=rabbit",
   "logging.level.pe.joedayz=DEBUG",
-        "eureka.client.enabled=false",
-        "spring.jpa.hibernate.ddl-auto=update",
-        "spring.cloud.config.enabled=false"})
+  "spring.jpa.hibernate.ddl-auto=update"})
 class ReviewServiceApplicationTests extends MySqlTestBase {
 
   @Autowired
@@ -57,9 +55,9 @@ class ReviewServiceApplicationTests extends MySqlTestBase {
     assertEquals(3, repository.findByProductId(productId).size());
 
     getAndVerifyReviewsByProductId(productId, OK)
-        .jsonPath("$.length()").isEqualTo(3)
-        .jsonPath("$[2].productId").isEqualTo(productId)
-        .jsonPath("$[2].reviewId").isEqualTo(3);
+      .jsonPath("$.length()").isEqualTo(3)
+      .jsonPath("$[2].productId").isEqualTo(productId)
+      .jsonPath("$[2].reviewId").isEqualTo(3);
   }
 
   @Test
@@ -75,9 +73,9 @@ class ReviewServiceApplicationTests extends MySqlTestBase {
     assertEquals(1, repository.count());
 
     InvalidInputException thrown = assertThrows(
-        InvalidInputException.class,
-        () -> sendCreateReviewEvent(productId, reviewId),
-        "Expected a InvalidInputException here!");
+      InvalidInputException.class,
+      () -> sendCreateReviewEvent(productId, reviewId),
+      "Expected a InvalidInputException here!");
     assertEquals("Duplicate key, Product Id: 1, Review Id:1", thrown.getMessage());
 
     assertEquals(1, repository.count());
@@ -102,23 +100,23 @@ class ReviewServiceApplicationTests extends MySqlTestBase {
   void getReviewsMissingParameter() {
 
     getAndVerifyReviewsByProductId("", BAD_REQUEST)
-        .jsonPath("$.path").isEqualTo("/review")
-        .jsonPath("$.message").isEqualTo("Required query parameter 'productId' is not present.");
+      .jsonPath("$.path").isEqualTo("/review")
+      .jsonPath("$.message").isEqualTo("Required query parameter 'productId' is not present.");
   }
 
   @Test
   void getReviewsInvalidParameter() {
 
     getAndVerifyReviewsByProductId("?productId=no-integer", BAD_REQUEST)
-        .jsonPath("$.path").isEqualTo("/review")
-        .jsonPath("$.message").isEqualTo("Type mismatch.");
+      .jsonPath("$.path").isEqualTo("/review")
+      .jsonPath("$.message").isEqualTo("Type mismatch.");
   }
 
   @Test
   void getReviewsNotFound() {
 
     getAndVerifyReviewsByProductId("?productId=213", OK)
-        .jsonPath("$.length()").isEqualTo(0);
+      .jsonPath("$.length()").isEqualTo(0);
   }
 
   @Test
@@ -127,8 +125,8 @@ class ReviewServiceApplicationTests extends MySqlTestBase {
     int productIdInvalid = -1;
 
     getAndVerifyReviewsByProductId("?productId=" + productIdInvalid, UNPROCESSABLE_ENTITY)
-        .jsonPath("$.path").isEqualTo("/review")
-        .jsonPath("$.message").isEqualTo("Invalid productId: " + productIdInvalid);
+      .jsonPath("$.path").isEqualTo("/review")
+      .jsonPath("$.message").isEqualTo("Invalid productId: " + productIdInvalid);
   }
 
   private WebTestClient.BodyContentSpec getAndVerifyReviewsByProductId(int productId, HttpStatus expectedStatus) {
@@ -137,12 +135,12 @@ class ReviewServiceApplicationTests extends MySqlTestBase {
 
   private WebTestClient.BodyContentSpec getAndVerifyReviewsByProductId(String productIdQuery, HttpStatus expectedStatus) {
     return client.get()
-        .uri("/review" + productIdQuery)
-        .accept(APPLICATION_JSON)
-        .exchange()
-        .expectStatus().isEqualTo(expectedStatus)
-        .expectHeader().contentType(APPLICATION_JSON)
-        .expectBody();
+      .uri("/review" + productIdQuery)
+      .accept(APPLICATION_JSON)
+      .exchange()
+      .expectStatus().isEqualTo(expectedStatus)
+      .expectHeader().contentType(APPLICATION_JSON)
+      .expectBody();
   }
 
   private void sendCreateReviewEvent(int productId, int reviewId) {

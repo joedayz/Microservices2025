@@ -53,7 +53,7 @@ public class IsSameEvent extends TypeSafeMatcher<String> {
 
   public static Matcher<String> sameEventExceptCreatedAt(Event expectedEvent) {
     return new IsSameEvent(expectedEvent);
-    }
+  }
 
   private Map getMapWithoutCreatedAt(Event event) {
     Map mapEvent = convertObjectToMap(event);

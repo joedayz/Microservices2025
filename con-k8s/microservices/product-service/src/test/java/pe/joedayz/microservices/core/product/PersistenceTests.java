@@ -10,7 +10,7 @@ import reactor.test.StepVerifier;
 import pe.joedayz.microservices.core.product.persistence.ProductEntity;
 import pe.joedayz.microservices.core.product.persistence.ProductRepository;
 
-@DataMongoTest(properties = {"spring.cloud.config.enabled=false"})
+@DataMongoTest
 class PersistenceTests extends MongoDbTestBase {
 
   @Autowired
@@ -24,9 +24,9 @@ class PersistenceTests extends MongoDbTestBase {
 
     ProductEntity entity = new ProductEntity(1, "n", 1);
     StepVerifier.create(repository.save(entity))
-        .expectNextMatches(createdEntity -> {
-          savedEntity = createdEntity;
-          return areProductEqual(entity, savedEntity);
+      .expectNextMatches(createdEntity -> {
+        savedEntity = createdEntity;
+        return areProductEqual(entity, savedEntity);
       })
       .verifyComplete();
   }
@@ -38,11 +38,11 @@ class PersistenceTests extends MongoDbTestBase {
 
     StepVerifier.create(repository.save(newEntity))
       .expectNextMatches(createdEntity -> newEntity.getProductId() == createdEntity.getProductId())
-        .verifyComplete();
+      .verifyComplete();
 
     StepVerifier.create(repository.findById(newEntity.getId()))
-            .expectNextMatches(foundEntity -> areProductEqual(newEntity, foundEntity))
-                .verifyComplete();
+      .expectNextMatches(foundEntity -> areProductEqual(newEntity, foundEntity))
+      .verifyComplete();
 
     StepVerifier.create(repository.count()).expectNext(2L).verifyComplete();
   }
@@ -51,14 +51,14 @@ class PersistenceTests extends MongoDbTestBase {
   void update() {
     savedEntity.setName("n2");
     StepVerifier.create(repository.save(savedEntity))
-        .expectNextMatches(updatedEntity -> updatedEntity.getName().equals("n2"))
-        .verifyComplete();
+      .expectNextMatches(updatedEntity -> updatedEntity.getName().equals("n2"))
+      .verifyComplete();
 
     StepVerifier.create(repository.findById(savedEntity.getId()))
-        .expectNextMatches(foundEntity ->
-            foundEntity.getVersion() == 1
-                && foundEntity.getName().equals("n2"))
-        .verifyComplete();
+      .expectNextMatches(foundEntity ->
+        foundEntity.getVersion() == 1
+        && foundEntity.getName().equals("n2"))
+      .verifyComplete();
   }
 
   @Test
@@ -71,8 +71,8 @@ class PersistenceTests extends MongoDbTestBase {
   void getByProductId() {
 
     StepVerifier.create(repository.findByProductId(savedEntity.getProductId()))
-        .expectNextMatches(foundEntity -> areProductEqual(savedEntity, foundEntity))
-        .verifyComplete();
+      .expectNextMatches(foundEntity -> areProductEqual(savedEntity, foundEntity))
+      .verifyComplete();
   }
 
   @Test
@@ -92,24 +92,24 @@ class PersistenceTests extends MongoDbTestBase {
     entity1.setName("n1");
     repository.save(entity1).block();
 
-    // Update the entity using the second entity object.
+    //  Update the entity using the second entity object.
     // This should fail since the second entity now holds a old version number, i.e. a Optimistic Lock Error
     StepVerifier.create(repository.save(entity2)).expectError(OptimisticLockingFailureException.class).verify();
 
     // Get the updated entity from the database and verify its new sate
     StepVerifier.create(repository.findById(savedEntity.getId()))
-        .expectNextMatches(foundEntity ->
-            foundEntity.getVersion() == 1
-                && foundEntity.getName().equals("n1"))
-        .verifyComplete();
+      .expectNextMatches(foundEntity ->
+        foundEntity.getVersion() == 1
+        && foundEntity.getName().equals("n1"))
+      .verifyComplete();
   }
 
   private boolean areProductEqual(ProductEntity expectedEntity, ProductEntity actualEntity) {
     return
       (expectedEntity.getId().equals(actualEntity.getId()))
-        && (expectedEntity.getVersion() == actualEntity.getVersion())
-        && (expectedEntity.getProductId() == actualEntity.getProductId())
+      && (expectedEntity.getVersion() == actualEntity.getVersion())
+      && (expectedEntity.getProductId() == actualEntity.getProductId())
       && (expectedEntity.getName().equals(actualEntity.getName()))
-        && (expectedEntity.getWeight() == actualEntity.getWeight());
+      && (expectedEntity.getWeight() == actualEntity.getWeight());
   }
 }
